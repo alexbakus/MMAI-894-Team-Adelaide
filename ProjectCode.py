@@ -14,7 +14,7 @@
 #                                                                                          #
 # The smallest image size of the dataset is 400x138 pixels of a pneumonia case. The images #
 # are resized to 135x135 to save system resources & processing & maintaining a size that   #
-# does not go below the smallest file.                                                     #
+# maximizes a factor of 2^n and does not go below the smallest file size too much.         #
 #                                                                                          #
 # To test this code, download the image files from the \NORMAL & \PNEUMONIA folders from   #
 # the Github repository https://github.com/alexbakus/MMAI-894-Team-Adelaide.               #
