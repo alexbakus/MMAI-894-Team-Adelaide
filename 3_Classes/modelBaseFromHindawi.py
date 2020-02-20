@@ -35,12 +35,12 @@ if gpus:
 
 
 from PIL import Image
-sourceSize = 'center_crop_400'
+sourceSize = 'center_crop_clean_300'
 img_width, img_height = 300, 300
 
 
 train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/train'
-validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/validation'
+validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/val'
 nb_train_samples = 10000
 nb_validation_samples = 2700
 epochs = 10
@@ -103,10 +103,19 @@ model.add(Conv2D(512,
 model.add(MaxPooling2D(pool_size=(2,2)))
 #model.add(BatchNormalization())
 
+model.add(Conv2D(512,
+                 kernel_size = (3, 3),
+                 activation='relu',
+                 padding='valid',
+                 kernel_initializer='glorot_uniform',
+                 input_shape=input_shape))
+model.add(MaxPooling2D(pool_size=(2,2)))
+#model.add(BatchNormalization())
+
 model.add(Flatten())
+model.add(Dropout(0.5))
 
-
-model.add(Dense(512,Activation('relu')))
+model.add(Dense(1024,Activation('relu')))
 
 model.add(Dense(512,Activation('relu')))
 

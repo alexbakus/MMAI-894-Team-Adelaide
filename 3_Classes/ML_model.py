@@ -18,11 +18,13 @@ import datetime
 import os
 
 from PIL import Image
+sourceSize = 'center_crop_clean_300'
+img_width, img_height = 300, 300
 
-img_width, img_height = 400, 400
+train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/train'
+validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/validation'
 
-train_data_dir = 'data'+str(img_width)+'/train'
-validation_data_dir = 'data'+str(img_width)+'/validation'
+
 nb_train_samples = 7000
 nb_validation_samples = 3000
 epochs = 10
@@ -115,7 +117,7 @@ model_name = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 log_dir = "logs\\fit\\" + model_name
 tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
 es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', verbose=1,patience=2)
-checkpoint_callback =  tf.keras.callbacks.ModelCheckpoint(filepath=(model_export + 'model_' + model_name + '.h5'),
+checkpoint_callback =  tf.keras.callbacks.ModelCheckpoint(filepath=(model_export + 'Experiment_model_' + model_name + '.h5'),
                                                                     monitor='val_loss',
                                                                     save_best_only=True)
 
