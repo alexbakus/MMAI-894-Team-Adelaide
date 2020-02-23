@@ -26,7 +26,7 @@ if gpus:
   try:
     tf.config.experimental.set_virtual_device_configuration(
         gpus[0],
-        [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=6144)])
+        [tf.config.experimental.VirtualDeviceConfiguration(memory_limit=4096)])
     logical_gpus = tf.config.experimental.list_logical_devices('GPU')
     print(len(gpus), "Physical GPUs,", len(logical_gpus), "Logical GPUs")
   except RuntimeError as e:
@@ -35,12 +35,12 @@ if gpus:
 
 from PIL import Image
 sourceSize = 'center_crop_clean_300'
-img_width, img_height = 300, 300
+img_width, img_height = 150, 150
 
 
-train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/train'
-validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/val'
-test_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/test'
+train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/train'
+validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/val'
+test_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/test'
 nb_train_samples = 10000
 nb_validation_samples = 2700
 epochs = 10
@@ -56,17 +56,20 @@ test_datagen = ImageDataGenerator(rescale=1. / 255)
 
 test_generator = test_datagen.flow_from_directory(
     test_data_dir,
+    shuffle=False,
     target_size=(img_width, img_height),
-    batch_size=batch_size, class_mode='categorical')
+    class_mode='categorical')
 
 
 top_model_dir = 'models\\'
-top_model_allFiles = glob.glob('models\\*h5')
+top_model_allFiles = glob.glob('models\\modelFromJimi_20200223-011857.h5')
 TopModel_preformanceList = []
+print(top_model_allFiles)
 for eachModel in top_model_allFiles:
+    print(eachModel)
     modelName =  (eachModel.split('\\')[-1][:-20])
     #TopModel_list.append(file_.split('\\')[-1][:-20])
-
+    print(modelName)
     modelPath = eachModel
     model = load_model(modelPath)
     print(model.summary())

@@ -65,8 +65,8 @@ for file_ in top_model_allFiles:
     print (file_.split('\\')[-1][:-20])
     TopModel_list.append(file_.split('\\')[-1][:-20])
 
-train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/train'
-validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/val'
+train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/train'
+validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/val'
 
 
 
