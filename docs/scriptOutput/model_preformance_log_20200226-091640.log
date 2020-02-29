@@ -1,0 +1,120 @@
+4_conv_16_nodes_1_dense_2_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_091640_T,[0.5599669610912149, 0.7477477],[[ 61  13  24]
+ [  2 123   4]
+ [ 32   9  65]],              precision    recall  f1-score   support
+
+    bacteria       0.64      0.62      0.63        98
+      normal       0.85      0.95      0.90       129
+       virus       0.70      0.61      0.65       106
+
+    accuracy                           0.75       333
+   macro avg       0.73      0.73      0.73       333
+weighted avg       0.74      0.75      0.74       333
+
+4_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_110937_T,[0.5856428320773623, 0.7417417],[[ 58  18  22]
+ [  2 127   0]
+ [ 29  15  62]],              precision    recall  f1-score   support
+
+    bacteria       0.65      0.59      0.62        98
+      normal       0.79      0.98      0.88       129
+       virus       0.74      0.58      0.65       106
+
+    accuracy                           0.74       333
+   macro avg       0.73      0.72      0.72       333
+weighted avg       0.73      0.74      0.73       333
+
+4_conv_32_nodes_2_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_124902_T,[0.6465277875011618, 0.7087087],[[ 66  16  16]
+ [ 10 116   3]
+ [ 37  15  54]],              precision    recall  f1-score   support
+
+    bacteria       0.58      0.67      0.63        98
+      normal       0.79      0.90      0.84       129
+       virus       0.74      0.51      0.60       106
+
+    accuracy                           0.71       333
+   macro avg       0.70      0.69      0.69       333
+weighted avg       0.71      0.71      0.70       333
+
+5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_140305_T,[0.6460592631589283, 0.7447447],[[ 59  13  26]
+ [  0 127   2]
+ [ 28  16  62]],              precision    recall  f1-score   support
+
+    bacteria       0.68      0.60      0.64        98
+      normal       0.81      0.98      0.89       129
+       virus       0.69      0.58      0.63       106
+
+    accuracy                           0.74       333
+   macro avg       0.73      0.72      0.72       333
+weighted avg       0.73      0.74      0.73       333
+
+5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_150858_T,[0.7107917828993364, 0.6186186],[[ 41   5  52]
+ [  1 102  26]
+ [ 38   5  63]],              precision    recall  f1-score   support
+
+    bacteria       0.51      0.42      0.46        98
+      normal       0.91      0.79      0.85       129
+       virus       0.45      0.59      0.51       106
+
+    accuracy                           0.62       333
+   macro avg       0.62      0.60      0.61       333
+weighted avg       0.65      0.62      0.63       333
+
+5_conv_32_nodes_0_dense_2_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_153846_T,[0.8193328871645711, 0.6846847],[[ 45  35  18]
+ [  0 127   2]
+ [ 30  20  56]],              precision    recall  f1-score   support
+
+    bacteria       0.60      0.46      0.52        98
+      normal       0.70      0.98      0.82       129
+       virus       0.74      0.53      0.62       106
+
+    accuracy                           0.68       333
+   macro avg       0.68      0.66      0.65       333
+weighted avg       0.68      0.68      0.67       333
+
+5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_162107_T,[0.7345601487904787, 0.6906907],[[ 61  30   7]
+ [  0 128   1]
+ [ 44  21  41]],              precision    recall  f1-score   support
+
+    bacteria       0.58      0.62      0.60        98
+      normal       0.72      0.99      0.83       129
+       virus       0.84      0.39      0.53       106
+
+    accuracy                           0.69       333
+   macro avg       0.71      0.67      0.65       333
+weighted avg       0.71      0.69      0.67       333
+
+5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_173321_T,[0.5677256990562786, 0.7357357],[[ 79   3  16]
+ [  7 116   6]
+ [ 52   4  50]],              precision    recall  f1-score   support
+
+    bacteria       0.57      0.81      0.67        98
+      normal       0.94      0.90      0.92       129
+       virus       0.69      0.47      0.56       106
+
+    accuracy                           0.74       333
+   macro avg       0.74      0.73      0.72       333
+weighted avg       0.75      0.74      0.73       333
+
+5_conv_32_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_185302_T,[0.6220880421725187, 0.6846847],[[ 38   8  52]
+ [  1 116  12]
+ [ 24   8  74]],              precision    recall  f1-score   support
+
+    bacteria       0.60      0.39      0.47        98
+      normal       0.88      0.90      0.89       129
+       virus       0.54      0.70      0.61       106
+
+    accuracy                           0.68       333
+   macro avg       0.67      0.66      0.66       333
+weighted avg       0.69      0.68      0.68       333
+
+5_conv_32_nodes_1_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_192246_T,[0.5502813824198463, 0.7717718],[[ 56   9  33]
+ [  0 123   6]
+ [ 20   8  78]],              precision    recall  f1-score   support
+
+    bacteria       0.74      0.57      0.64        98
+      normal       0.88      0.95      0.91       129
+       virus       0.67      0.74      0.70       106
+
+    accuracy                           0.77       333
+   macro avg       0.76      0.75      0.75       333
+weighted avg       0.77      0.77      0.77       333
+

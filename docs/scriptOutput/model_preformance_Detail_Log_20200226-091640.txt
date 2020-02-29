@@ -1,0 +1,1504 @@
+(keras-gpu) C:\Users\hijoh\OneDrive - Kapsch Group\Documents\MMAI\MMAI894\MMAI-894-Team-Adelaide>python 3_Classes\ReTrain_Top_Models.py
+Using TensorFlow backend.
+2020-02-26 09:16:36.462282: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudart64_100.dll
+2020-02-26 09:16:39.979430: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library nvcuda.dll
+2020-02-26 09:16:40.009866: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.8475
+pciBusID: 0000:09:00.0
+2020-02-26 09:16:40.013748: I tensorflow/stream_executor/platform/default/dlopen_checker_stub.cc:25] GPU libraries are statically linked, skip dlopen check.
+2020-02-26 09:16:40.016931: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-02-26 09:16:40.019943: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX AVX2
+2020-02-26 09:16:40.047782: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1618] Found device 0 with properties:
+name: GeForce GTX 1080 major: 6 minor: 1 memoryClockRate(GHz): 1.8475
+pciBusID: 0000:09:00.0
+2020-02-26 09:16:40.052041: I tensorflow/stream_executor/platform/default/dlopen_checker_stub.cc:25] GPU libraries are statically linked, skip dlopen check.
+2020-02-26 09:16:40.055059: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1746] Adding visible gpu devices: 0
+2020-02-26 09:16:40.590609: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1159] Device interconnect StreamExecutor with strength 1 edge matrix:
+2020-02-26 09:16:40.593868: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1165]      0
+2020-02-26 09:16:40.595745: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1178] 0:   N
+2020-02-26 09:16:40.598249: I tensorflow/core/common_runtime/gpu/gpu_device.cc:1304] Created TensorFlow device (/job:localhost/replica:0/task:0/device:GPU:0 with 6144 MB memory) -> physical GPU (device: 0, name: GeForce GTX 1080, pci bus id: 0000:09:00.0, compute capability: 6.1
+)
+1 Physical GPUs, 1 Logical GPUs
+NewModel_4_conv_16_nodes_1_dense_2_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+NewModel_4_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+NewModel_4_conv_32_nodes_2_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+NewModel_5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+NewModel_5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+NewModel_5_conv_32_nodes_0_dense_2_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+NewModel_5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+NewModel_5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+NewModel_5_conv_32_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+NewModel_5_conv_32_nodes_1_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+4_conv_16_nodes_1_dense_2_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+('4', '16', '1', '2', 'adam', '0_01', '0_0')
+4 16 1 2 adam 0.01 0.0
+4_conv_16_nodes_1_dense_2_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_091640_T
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d (Conv2D)              (None, 299, 299, 16)      208
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout (Dropout)            (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 148, 148, 16)      1040
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 74, 74, 16)        0
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 74, 74, 16)        0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 73, 73, 32)        2080
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 36, 36, 32)        0
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 36, 36, 32)        0
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 35, 35, 64)        8256
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 17, 17, 64)        0
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 17, 17, 64)        0
+_________________________________________________________________
+flatten (Flatten)            (None, 18496)             0
+_________________________________________________________________
+dense (Dense)                (None, 256)               4735232
+_________________________________________________________________
+activation (Activation)      (None, 256)               0
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 256)               0
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 771
+=================================================================
+Total params: 4,747,587
+Trainable params: 4,747,587
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 09:16:42.116566: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cudnn64_7.dll
+2020-02-26 09:16:42.810060: W tensorflow/stream_executor/cuda/redzone_allocator.cc:312] Internal: Invoking ptxas not supported on Windows
+Relying on driver to perform ptx compilation. This message will be only logged once.
+2020-02-26 09:16:42.925424: I tensorflow/stream_executor/platform/default/dso_loader.cc:44] Successfully opened dynamic library cublas64_100.dll
+2020-02-26 09:16:43.321518: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 09:16:43.329794: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'cupti64_100.dll'; dlerror: cupti64_100.dll not found
+2020-02-26 09:16:43.333863: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 14:14 - loss: 1.0986 - accuracy: 0.53122020-02-26 09:16:43.465688: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 09:16:43.472115: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 357s 762ms/step - loss: 0.9847 - accuracy: 0.4993 - val_loss: 0.8953 - val_accuracy: 0.5778
+Epoch 2/30
+468/468 [==============================] - 359s 766ms/step - loss: 0.8376 - accuracy: 0.6116 - val_loss: 0.7951 - val_accuracy: 0.6259
+Epoch 3/30
+468/468 [==============================] - 347s 741ms/step - loss: 0.7760 - accuracy: 0.6464 - val_loss: 0.7577 - val_accuracy: 0.6573
+Epoch 4/30
+468/468 [==============================] - 364s 777ms/step - loss: 0.7352 - accuracy: 0.6645 - val_loss: 0.7152 - val_accuracy: 0.6843
+Epoch 5/30
+468/468 [==============================] - 347s 741ms/step - loss: 0.7028 - accuracy: 0.6856 - val_loss: 0.7002 - val_accuracy: 0.6916
+Epoch 6/30
+468/468 [==============================] - 346s 740ms/step - loss: 0.6882 - accuracy: 0.6928 - val_loss: 0.7147 - val_accuracy: 0.6748
+Epoch 7/30
+468/468 [==============================] - 347s 742ms/step - loss: 0.6711 - accuracy: 0.7063 - val_loss: 0.6661 - val_accuracy: 0.7141
+Epoch 8/30
+468/468 [==============================] - 349s 745ms/step - loss: 0.6649 - accuracy: 0.7099 - val_loss: 0.6691 - val_accuracy: 0.7115
+Epoch 9/30
+468/468 [==============================] - 347s 741ms/step - loss: 0.6582 - accuracy: 0.7160 - val_loss: 0.6647 - val_accuracy: 0.7123
+Epoch 10/30
+468/468 [==============================] - 346s 740ms/step - loss: 0.6528 - accuracy: 0.7167 - val_loss: 0.6495 - val_accuracy: 0.7162
+Epoch 11/30
+468/468 [==============================] - 349s 745ms/step - loss: 0.6432 - accuracy: 0.7214 - val_loss: 0.6470 - val_accuracy: 0.7184
+Epoch 12/30
+468/468 [==============================] - 346s 740ms/step - loss: 0.6342 - accuracy: 0.7244 - val_loss: 0.6505 - val_accuracy: 0.7127
+Epoch 13/30
+468/468 [==============================] - 351s 749ms/step - loss: 0.6331 - accuracy: 0.7218 - val_loss: 0.6338 - val_accuracy: 0.7296
+Epoch 14/30
+468/468 [==============================] - 348s 744ms/step - loss: 0.6249 - accuracy: 0.7298 - val_loss: 0.6505 - val_accuracy: 0.7269
+Epoch 15/30
+468/468 [==============================] - 432s 924ms/step - loss: 0.6190 - accuracy: 0.7316 - val_loss: 0.6297 - val_accuracy: 0.7340
+Epoch 16/30
+468/468 [==============================] - 387s 827ms/step - loss: 0.6154 - accuracy: 0.7315 - val_loss: 0.6273 - val_accuracy: 0.7375
+Epoch 17/30
+468/468 [==============================] - 350s 748ms/step - loss: 0.6061 - accuracy: 0.7375 - val_loss: 0.6211 - val_accuracy: 0.7338
+Epoch 18/30
+468/468 [==============================] - 354s 755ms/step - loss: 0.6092 - accuracy: 0.7392 - val_loss: 0.6575 - val_accuracy: 0.7172
+Epoch 19/30
+468/468 [==============================] - 348s 743ms/step - loss: 0.6047 - accuracy: 0.7381 - val_loss: 0.6248 - val_accuracy: 0.7409
+Epoch 00019: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d (Conv2D)              (None, 299, 299, 16)      208
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout (Dropout)            (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_1 (Conv2D)            (None, 148, 148, 16)      1040
+_________________________________________________________________
+max_pooling2d_1 (MaxPooling2 (None, 74, 74, 16)        0
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 74, 74, 16)        0
+_________________________________________________________________
+conv2d_2 (Conv2D)            (None, 73, 73, 32)        2080
+_________________________________________________________________
+max_pooling2d_2 (MaxPooling2 (None, 36, 36, 32)        0
+_________________________________________________________________
+dropout_2 (Dropout)          (None, 36, 36, 32)        0
+_________________________________________________________________
+conv2d_3 (Conv2D)            (None, 35, 35, 64)        8256
+_________________________________________________________________
+max_pooling2d_3 (MaxPooling2 (None, 17, 17, 64)        0
+_________________________________________________________________
+dropout_3 (Dropout)          (None, 17, 17, 64)        0
+_________________________________________________________________
+flatten (Flatten)            (None, 18496)             0
+_________________________________________________________________
+dense (Dense)                (None, 256)               4735232
+_________________________________________________________________
+activation (Activation)      (None, 256)               0
+_________________________________________________________________
+dropout_4 (Dropout)          (None, 256)               0
+_________________________________________________________________
+dense_1 (Dense)              (None, 3)                 771
+=================================================================
+Total params: 4,747,587
+Trainable params: 4,747,587
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 2s 153ms/step - loss: 0.5600 - accuracy: 0.7477
+[0.5599669610912149, 0.7477477]
+11/11 [==============================] - 1s 113ms/step
+Confusion Matrix
+[[ 61  13  24]
+ [  2 123   4]
+ [ 32   9  65]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.64      0.62      0.63        98
+      normal       0.85      0.95      0.90       129
+       virus       0.70      0.61      0.65       106
+
+    accuracy                           0.75       333
+   macro avg       0.73      0.73      0.73       333
+weighted avg       0.74      0.75      0.74       333
+
+[0.5599669610912149, 0.7477477]
+4_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+('4', '16', '1', '3', 'adam', '0_01', '0_0')
+4 16 1 3 adam 0.01 0.0
+4_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_110937_T
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_4 (Conv2D)            (None, 298, 298, 16)      448
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout_5 (Dropout)          (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 147, 147, 16)      2320
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 73, 73, 16)        0
+_________________________________________________________________
+dropout_6 (Dropout)          (None, 73, 73, 16)        0
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 71, 71, 32)        4640
+_________________________________________________________________
+max_pooling2d_6 (MaxPooling2 (None, 35, 35, 32)        0
+_________________________________________________________________
+dropout_7 (Dropout)          (None, 35, 35, 32)        0
+_________________________________________________________________
+conv2d_7 (Conv2D)            (None, 33, 33, 64)        18496
+_________________________________________________________________
+max_pooling2d_7 (MaxPooling2 (None, 16, 16, 64)        0
+_________________________________________________________________
+dropout_8 (Dropout)          (None, 16, 16, 64)        0
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 16384)             0
+_________________________________________________________________
+dense_2 (Dense)              (None, 256)               4194560
+_________________________________________________________________
+activation_1 (Activation)    (None, 256)               0
+_________________________________________________________________
+dropout_9 (Dropout)          (None, 256)               0
+_________________________________________________________________
+dense_3 (Dense)              (None, 3)                 771
+=================================================================
+Total params: 4,221,235
+Trainable params: 4,221,235
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 11:09:38.805191: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 11:09:38.807767: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 7:47 - loss: 1.0984 - accuracy: 0.37502020-02-26 11:09:39.058823: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 11:09:39.064024: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 380s 811ms/step - loss: 1.0632 - accuracy: 0.4214 - val_loss: 0.9126 - val_accuracy: 0.5569
+Epoch 2/30
+468/468 [==============================] - 350s 748ms/step - loss: 0.8357 - accuracy: 0.6004 - val_loss: 0.8100 - val_accuracy: 0.6198
+Epoch 3/30
+468/468 [==============================] - 353s 754ms/step - loss: 0.7712 - accuracy: 0.6471 - val_loss: 0.8010 - val_accuracy: 0.6261
+Epoch 4/30
+468/468 [==============================] - 352s 752ms/step - loss: 0.7492 - accuracy: 0.6618 - val_loss: 0.7893 - val_accuracy: 0.6405
+Epoch 5/30
+468/468 [==============================] - 348s 743ms/step - loss: 0.7337 - accuracy: 0.6671 - val_loss: 0.7381 - val_accuracy: 0.6657
+Epoch 6/30
+468/468 [==============================] - 348s 744ms/step - loss: 0.7131 - accuracy: 0.6788 - val_loss: 0.7159 - val_accuracy: 0.6845
+Epoch 7/30
+468/468 [==============================] - 349s 745ms/step - loss: 0.6928 - accuracy: 0.6883 - val_loss: 0.7197 - val_accuracy: 0.6679
+Epoch 8/30
+468/468 [==============================] - 348s 743ms/step - loss: 0.6759 - accuracy: 0.6982 - val_loss: 0.6995 - val_accuracy: 0.6920
+Epoch 9/30
+468/468 [==============================] - 346s 740ms/step - loss: 0.6600 - accuracy: 0.7033 - val_loss: 0.6694 - val_accuracy: 0.7056
+Epoch 10/30
+468/468 [==============================] - 347s 741ms/step - loss: 0.6452 - accuracy: 0.7162 - val_loss: 0.6578 - val_accuracy: 0.7156
+Epoch 11/30
+468/468 [==============================] - 346s 739ms/step - loss: 0.6365 - accuracy: 0.7203 - val_loss: 0.6493 - val_accuracy: 0.7223
+Epoch 12/30
+468/468 [==============================] - 350s 749ms/step - loss: 0.6251 - accuracy: 0.7252 - val_loss: 0.6500 - val_accuracy: 0.7170
+Epoch 13/30
+468/468 [==============================] - 353s 753ms/step - loss: 0.6129 - accuracy: 0.7306 - val_loss: 0.6478 - val_accuracy: 0.7192
+Epoch 14/30
+468/468 [==============================] - 350s 748ms/step - loss: 0.6090 - accuracy: 0.7333 - val_loss: 0.6302 - val_accuracy: 0.7292
+Epoch 15/30
+468/468 [==============================] - 349s 745ms/step - loss: 0.6107 - accuracy: 0.7353 - val_loss: 0.6218 - val_accuracy: 0.7257
+Epoch 16/30
+468/468 [==============================] - 348s 743ms/step - loss: 0.6028 - accuracy: 0.7337 - val_loss: 0.6760 - val_accuracy: 0.7145
+Epoch 17/30
+468/468 [==============================] - 347s 742ms/step - loss: 0.5935 - accuracy: 0.7410 - val_loss: 0.6278 - val_accuracy: 0.7322
+Epoch 00017: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_1"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_4 (Conv2D)            (None, 298, 298, 16)      448
+_________________________________________________________________
+max_pooling2d_4 (MaxPooling2 (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout_5 (Dropout)          (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_5 (Conv2D)            (None, 147, 147, 16)      2320
+_________________________________________________________________
+max_pooling2d_5 (MaxPooling2 (None, 73, 73, 16)        0
+_________________________________________________________________
+dropout_6 (Dropout)          (None, 73, 73, 16)        0
+_________________________________________________________________
+conv2d_6 (Conv2D)            (None, 71, 71, 32)        4640
+_________________________________________________________________
+max_pooling2d_6 (MaxPooling2 (None, 35, 35, 32)        0
+_________________________________________________________________
+dropout_7 (Dropout)          (None, 35, 35, 32)        0
+_________________________________________________________________
+conv2d_7 (Conv2D)            (None, 33, 33, 64)        18496
+_________________________________________________________________
+max_pooling2d_7 (MaxPooling2 (None, 16, 16, 64)        0
+_________________________________________________________________
+dropout_8 (Dropout)          (None, 16, 16, 64)        0
+_________________________________________________________________
+flatten_1 (Flatten)          (None, 16384)             0
+_________________________________________________________________
+dense_2 (Dense)              (None, 256)               4194560
+_________________________________________________________________
+activation_1 (Activation)    (None, 256)               0
+_________________________________________________________________
+dropout_9 (Dropout)          (None, 256)               0
+_________________________________________________________________
+dense_3 (Dense)              (None, 3)                 771
+=================================================================
+Total params: 4,221,235
+Trainable params: 4,221,235
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 1s 127ms/step - loss: 0.5856 - accuracy: 0.7417
+[0.5856428320773623, 0.7417417]
+11/11 [==============================] - 1s 113ms/step
+Confusion Matrix
+[[ 58  18  22]
+ [  2 127   0]
+ [ 29  15  62]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.65      0.59      0.62        98
+      normal       0.79      0.98      0.88       129
+       virus       0.74      0.58      0.65       106
+
+    accuracy                           0.74       333
+   macro avg       0.73      0.72      0.72       333
+weighted avg       0.73      0.74      0.73       333
+
+[0.5856428320773623, 0.7417417]
+4_conv_32_nodes_2_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+('4', '32', '2', '4', 'adam', '0_001', '0_0')
+4 32 2 4 adam 0.001 0.0
+4_conv_32_nodes_2_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_124902_T
+Model: "sequential_2"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_8 (Conv2D)            (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_8 (MaxPooling2 (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_10 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_9 (Conv2D)            (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_9 (MaxPooling2 (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_11 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_10 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_10 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_12 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_11 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_11 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_13 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+flatten_2 (Flatten)          (None, 28800)             0
+_________________________________________________________________
+dense_4 (Dense)              (None, 512)               14746112
+_________________________________________________________________
+activation_2 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_14 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_5 (Dense)              (None, 512)               262656
+_________________________________________________________________
+activation_3 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_15 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_6 (Dense)              (None, 3)                 1539
+=================================================================
+Total params: 15,192,323
+Trainable params: 15,192,323
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 12:49:04.618641: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 12:49:04.621116: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 8:45 - loss: 1.0970 - accuracy: 0.40622020-02-26 12:49:04.836017: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 12:49:04.842767: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 362s 773ms/step - loss: 1.0857 - accuracy: 0.4030 - val_loss: 1.0186 - val_accuracy: 0.5447
+Epoch 2/30
+468/468 [==============================] - 387s 827ms/step - loss: 0.8764 - accuracy: 0.5748 - val_loss: 0.8311 - val_accuracy: 0.5922
+Epoch 3/30
+468/468 [==============================] - 384s 820ms/step - loss: 0.7967 - accuracy: 0.6252 - val_loss: 0.7718 - val_accuracy: 0.6306
+Epoch 4/30
+468/468 [==============================] - 361s 771ms/step - loss: 0.7441 - accuracy: 0.6563 - val_loss: 0.8185 - val_accuracy: 0.6306
+Epoch 5/30
+468/468 [==============================] - 354s 757ms/step - loss: 0.7174 - accuracy: 0.6758 - val_loss: 0.7101 - val_accuracy: 0.6770
+Epoch 6/30
+468/468 [==============================] - 390s 832ms/step - loss: 0.7004 - accuracy: 0.6852 - val_loss: 0.7140 - val_accuracy: 0.6801
+Epoch 7/30
+468/468 [==============================] - 367s 785ms/step - loss: 0.6872 - accuracy: 0.6954 - val_loss: 0.6944 - val_accuracy: 0.6882
+Epoch 8/30
+468/468 [==============================] - 366s 783ms/step - loss: 0.6836 - accuracy: 0.6984 - val_loss: 0.7352 - val_accuracy: 0.6762
+Epoch 9/30
+468/468 [==============================] - 364s 778ms/step - loss: 0.6705 - accuracy: 0.7052 - val_loss: 0.6755 - val_accuracy: 0.7022
+Epoch 10/30
+468/468 [==============================] - 358s 764ms/step - loss: 0.6599 - accuracy: 0.7098 - val_loss: 0.6504 - val_accuracy: 0.7208
+Epoch 11/30
+468/468 [==============================] - 358s 766ms/step - loss: 0.6434 - accuracy: 0.7192 - val_loss: 0.6571 - val_accuracy: 0.7101
+Epoch 12/30
+468/468 [==============================] - 387s 828ms/step - loss: 0.6383 - accuracy: 0.7238 - val_loss: 0.6696 - val_accuracy: 0.7052
+Epoch 00012: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_2"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_8 (Conv2D)            (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_8 (MaxPooling2 (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_10 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_9 (Conv2D)            (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_9 (MaxPooling2 (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_11 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_10 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_10 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_12 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_11 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_11 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_13 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+flatten_2 (Flatten)          (None, 28800)             0
+_________________________________________________________________
+dense_4 (Dense)              (None, 512)               14746112
+_________________________________________________________________
+activation_2 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_14 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_5 (Dense)              (None, 512)               262656
+_________________________________________________________________
+activation_3 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_15 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_6 (Dense)              (None, 3)                 1539
+=================================================================
+Total params: 15,192,323
+Trainable params: 15,192,323
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 2s 171ms/step - loss: 0.6465 - accuracy: 0.7087
+[0.6465277875011618, 0.7087087]
+11/11 [==============================] - 2s 161ms/step
+Confusion Matrix
+[[ 66  16  16]
+ [ 10 116   3]
+ [ 37  15  54]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.58      0.67      0.63        98
+      normal       0.79      0.90      0.84       129
+       virus       0.74      0.51      0.60       106
+
+    accuracy                           0.71       333
+   macro avg       0.70      0.69      0.69       333
+weighted avg       0.71      0.71      0.70       333
+
+[0.6465277875011618, 0.7087087]
+5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+('5', '16', '1', '3', 'adam', '0_001', '0_0')
+5 16 1 3 adam 0.001 0.0
+5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_140305_T
+Model: "sequential_3"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_12 (Conv2D)           (None, 298, 298, 16)      448
+_________________________________________________________________
+max_pooling2d_12 (MaxPooling (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout_16 (Dropout)         (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_13 (Conv2D)           (None, 147, 147, 16)      2320
+_________________________________________________________________
+max_pooling2d_13 (MaxPooling (None, 73, 73, 16)        0
+_________________________________________________________________
+dropout_17 (Dropout)         (None, 73, 73, 16)        0
+_________________________________________________________________
+conv2d_14 (Conv2D)           (None, 71, 71, 32)        4640
+_________________________________________________________________
+max_pooling2d_14 (MaxPooling (None, 35, 35, 32)        0
+_________________________________________________________________
+dropout_18 (Dropout)         (None, 35, 35, 32)        0
+_________________________________________________________________
+conv2d_15 (Conv2D)           (None, 33, 33, 64)        18496
+_________________________________________________________________
+max_pooling2d_15 (MaxPooling (None, 16, 16, 64)        0
+_________________________________________________________________
+dropout_19 (Dropout)         (None, 16, 16, 64)        0
+_________________________________________________________________
+conv2d_16 (Conv2D)           (None, 14, 14, 128)       73856
+_________________________________________________________________
+max_pooling2d_16 (MaxPooling (None, 7, 7, 128)         0
+_________________________________________________________________
+dropout_20 (Dropout)         (None, 7, 7, 128)         0
+_________________________________________________________________
+flatten_3 (Flatten)          (None, 6272)              0
+_________________________________________________________________
+dense_7 (Dense)              (None, 256)               1605888
+_________________________________________________________________
+activation_4 (Activation)    (None, 256)               0
+_________________________________________________________________
+dropout_21 (Dropout)         (None, 256)               0
+_________________________________________________________________
+dense_8 (Dense)              (None, 3)                 771
+=================================================================
+Total params: 1,706,419
+Trainable params: 1,706,419
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 14:03:07.668483: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 14:03:07.670990: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 5:40 - loss: 1.0987 - accuracy: 0.25002020-02-26 14:03:08.187692: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 14:03:08.192842: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 363s 776ms/step - loss: 0.9876 - accuracy: 0.4797 - val_loss: 0.8687 - val_accuracy: 0.5589
+Epoch 2/30
+468/468 [==============================] - 363s 775ms/step - loss: 0.8073 - accuracy: 0.6240 - val_loss: 0.7707 - val_accuracy: 0.6429
+Epoch 3/30
+468/468 [==============================] - 354s 756ms/step - loss: 0.7599 - accuracy: 0.6484 - val_loss: 0.7752 - val_accuracy: 0.6226
+Epoch 4/30
+468/468 [==============================] - 347s 741ms/step - loss: 0.7280 - accuracy: 0.6673 - val_loss: 0.7288 - val_accuracy: 0.6565
+Epoch 5/30
+468/468 [==============================] - 347s 742ms/step - loss: 0.6863 - accuracy: 0.6850 - val_loss: 0.6636 - val_accuracy: 0.7038
+Epoch 6/30
+468/468 [==============================] - 391s 836ms/step - loss: 0.6676 - accuracy: 0.7001 - val_loss: 0.6698 - val_accuracy: 0.7010
+Epoch 7/30
+468/468 [==============================] - 383s 819ms/step - loss: 0.6399 - accuracy: 0.7103 - val_loss: 0.6360 - val_accuracy: 0.7176
+Epoch 8/30
+468/468 [==============================] - 357s 763ms/step - loss: 0.6192 - accuracy: 0.7254 - val_loss: 0.6231 - val_accuracy: 0.7178
+Epoch 9/30
+468/468 [==============================] - 350s 747ms/step - loss: 0.6076 - accuracy: 0.7365 - val_loss: 0.5974 - val_accuracy: 0.7328
+Epoch 10/30
+468/468 [==============================] - 347s 742ms/step - loss: 0.5966 - accuracy: 0.7381 - val_loss: 0.6083 - val_accuracy: 0.7381
+Epoch 11/30
+468/468 [==============================] - 347s 742ms/step - loss: 0.5859 - accuracy: 0.7421 - val_loss: 0.6590 - val_accuracy: 0.7196
+Epoch 00011: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_3"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_12 (Conv2D)           (None, 298, 298, 16)      448
+_________________________________________________________________
+max_pooling2d_12 (MaxPooling (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout_16 (Dropout)         (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_13 (Conv2D)           (None, 147, 147, 16)      2320
+_________________________________________________________________
+max_pooling2d_13 (MaxPooling (None, 73, 73, 16)        0
+_________________________________________________________________
+dropout_17 (Dropout)         (None, 73, 73, 16)        0
+_________________________________________________________________
+conv2d_14 (Conv2D)           (None, 71, 71, 32)        4640
+_________________________________________________________________
+max_pooling2d_14 (MaxPooling (None, 35, 35, 32)        0
+_________________________________________________________________
+dropout_18 (Dropout)         (None, 35, 35, 32)        0
+_________________________________________________________________
+conv2d_15 (Conv2D)           (None, 33, 33, 64)        18496
+_________________________________________________________________
+max_pooling2d_15 (MaxPooling (None, 16, 16, 64)        0
+_________________________________________________________________
+dropout_19 (Dropout)         (None, 16, 16, 64)        0
+_________________________________________________________________
+conv2d_16 (Conv2D)           (None, 14, 14, 128)       73856
+_________________________________________________________________
+max_pooling2d_16 (MaxPooling (None, 7, 7, 128)         0
+_________________________________________________________________
+dropout_20 (Dropout)         (None, 7, 7, 128)         0
+_________________________________________________________________
+flatten_3 (Flatten)          (None, 6272)              0
+_________________________________________________________________
+dense_7 (Dense)              (None, 256)               1605888
+_________________________________________________________________
+activation_4 (Activation)    (None, 256)               0
+_________________________________________________________________
+dropout_21 (Dropout)         (None, 256)               0
+_________________________________________________________________
+dense_8 (Dense)              (None, 3)                 771
+=================================================================
+Total params: 1,706,419
+Trainable params: 1,706,419
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 1s 120ms/step - loss: 0.6461 - accuracy: 0.7447
+[0.6460592631589283, 0.7447447]
+11/11 [==============================] - 1s 112ms/step
+Confusion Matrix
+[[ 59  13  26]
+ [  0 127   2]
+ [ 28  16  62]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.68      0.60      0.64        98
+      normal       0.81      0.98      0.89       129
+       virus       0.69      0.58      0.63       106
+
+    accuracy                           0.74       333
+   macro avg       0.73      0.72      0.72       333
+weighted avg       0.73      0.74      0.73       333
+
+[0.6460592631589283, 0.7447447]
+5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+('5', '16', '1', '3', 'adam', '0_01', '0_0')
+5 16 1 3 adam 0.01 0.0
+5_conv_16_nodes_1_dense_3_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_150858_T
+Model: "sequential_4"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_17 (Conv2D)           (None, 298, 298, 16)      448
+_________________________________________________________________
+max_pooling2d_17 (MaxPooling (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout_22 (Dropout)         (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_18 (Conv2D)           (None, 147, 147, 16)      2320
+_________________________________________________________________
+max_pooling2d_18 (MaxPooling (None, 73, 73, 16)        0
+_________________________________________________________________
+dropout_23 (Dropout)         (None, 73, 73, 16)        0
+_________________________________________________________________
+conv2d_19 (Conv2D)           (None, 71, 71, 32)        4640
+_________________________________________________________________
+max_pooling2d_19 (MaxPooling (None, 35, 35, 32)        0
+_________________________________________________________________
+dropout_24 (Dropout)         (None, 35, 35, 32)        0
+_________________________________________________________________
+conv2d_20 (Conv2D)           (None, 33, 33, 64)        18496
+_________________________________________________________________
+max_pooling2d_20 (MaxPooling (None, 16, 16, 64)        0
+_________________________________________________________________
+dropout_25 (Dropout)         (None, 16, 16, 64)        0
+_________________________________________________________________
+conv2d_21 (Conv2D)           (None, 14, 14, 128)       73856
+_________________________________________________________________
+max_pooling2d_21 (MaxPooling (None, 7, 7, 128)         0
+_________________________________________________________________
+dropout_26 (Dropout)         (None, 7, 7, 128)         0
+_________________________________________________________________
+flatten_4 (Flatten)          (None, 6272)              0
+_________________________________________________________________
+dense_9 (Dense)              (None, 256)               1605888
+_________________________________________________________________
+activation_5 (Activation)    (None, 256)               0
+_________________________________________________________________
+dropout_27 (Dropout)         (None, 256)               0
+_________________________________________________________________
+dense_10 (Dense)             (None, 3)                 771
+=================================================================
+Total params: 1,706,419
+Trainable params: 1,706,419
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 15:09:00.238555: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 15:09:00.241062: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 5:40 - loss: 1.0986 - accuracy: 0.31252020-02-26 15:09:00.752054: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 15:09:00.758626: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 352s 751ms/step - loss: 1.0238 - accuracy: 0.4579 - val_loss: 0.8649 - val_accuracy: 0.5725
+Epoch 2/30
+468/468 [==============================] - 384s 820ms/step - loss: 0.8138 - accuracy: 0.6114 - val_loss: 0.7571 - val_accuracy: 0.6486
+Epoch 3/30
+468/468 [==============================] - 350s 749ms/step - loss: 0.7381 - accuracy: 0.6603 - val_loss: 0.7207 - val_accuracy: 0.6657
+Epoch 4/30
+468/468 [==============================] - 351s 750ms/step - loss: 0.7071 - accuracy: 0.6800 - val_loss: 0.7789 - val_accuracy: 0.6492
+Epoch 5/30
+468/468 [==============================] - 347s 742ms/step - loss: 0.6840 - accuracy: 0.6933 - val_loss: 0.7808 - val_accuracy: 0.6180
+Epoch 00005: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_4"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_17 (Conv2D)           (None, 298, 298, 16)      448
+_________________________________________________________________
+max_pooling2d_17 (MaxPooling (None, 149, 149, 16)      0
+_________________________________________________________________
+dropout_22 (Dropout)         (None, 149, 149, 16)      0
+_________________________________________________________________
+conv2d_18 (Conv2D)           (None, 147, 147, 16)      2320
+_________________________________________________________________
+max_pooling2d_18 (MaxPooling (None, 73, 73, 16)        0
+_________________________________________________________________
+dropout_23 (Dropout)         (None, 73, 73, 16)        0
+_________________________________________________________________
+conv2d_19 (Conv2D)           (None, 71, 71, 32)        4640
+_________________________________________________________________
+max_pooling2d_19 (MaxPooling (None, 35, 35, 32)        0
+_________________________________________________________________
+dropout_24 (Dropout)         (None, 35, 35, 32)        0
+_________________________________________________________________
+conv2d_20 (Conv2D)           (None, 33, 33, 64)        18496
+_________________________________________________________________
+max_pooling2d_20 (MaxPooling (None, 16, 16, 64)        0
+_________________________________________________________________
+dropout_25 (Dropout)         (None, 16, 16, 64)        0
+_________________________________________________________________
+conv2d_21 (Conv2D)           (None, 14, 14, 128)       73856
+_________________________________________________________________
+max_pooling2d_21 (MaxPooling (None, 7, 7, 128)         0
+_________________________________________________________________
+dropout_26 (Dropout)         (None, 7, 7, 128)         0
+_________________________________________________________________
+flatten_4 (Flatten)          (None, 6272)              0
+_________________________________________________________________
+dense_9 (Dense)              (None, 256)               1605888
+_________________________________________________________________
+activation_5 (Activation)    (None, 256)               0
+_________________________________________________________________
+dropout_27 (Dropout)         (None, 256)               0
+_________________________________________________________________
+dense_10 (Dense)             (None, 3)                 771
+=================================================================
+Total params: 1,706,419
+Trainable params: 1,706,419
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 1s 128ms/step - loss: 0.7108 - accuracy: 0.6186
+[0.7107917828993364, 0.6186186]
+11/11 [==============================] - 1s 110ms/step
+Confusion Matrix
+[[ 41   5  52]
+ [  1 102  26]
+ [ 38   5  63]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.51      0.42      0.46        98
+      normal       0.91      0.79      0.85       129
+       virus       0.45      0.59      0.51       106
+
+    accuracy                           0.62       333
+   macro avg       0.62      0.60      0.61       333
+weighted avg       0.65      0.62      0.63       333
+
+[0.7107917828993364, 0.6186186]
+5_conv_32_nodes_0_dense_2_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+('5', '32', '0', '2', 'adam', '0_001', '0_0')
+5 32 0 2 adam 0.001 0.0
+5_conv_32_nodes_0_dense_2_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_153846_T
+Model: "sequential_5"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_22 (Conv2D)           (None, 299, 299, 32)      416
+_________________________________________________________________
+max_pooling2d_22 (MaxPooling (None, 149, 149, 32)      0
+_________________________________________________________________
+dropout_28 (Dropout)         (None, 149, 149, 32)      0
+_________________________________________________________________
+conv2d_23 (Conv2D)           (None, 148, 148, 32)      4128
+_________________________________________________________________
+max_pooling2d_23 (MaxPooling (None, 74, 74, 32)        0
+_________________________________________________________________
+dropout_29 (Dropout)         (None, 74, 74, 32)        0
+_________________________________________________________________
+conv2d_24 (Conv2D)           (None, 73, 73, 64)        8256
+_________________________________________________________________
+max_pooling2d_24 (MaxPooling (None, 36, 36, 64)        0
+_________________________________________________________________
+dropout_30 (Dropout)         (None, 36, 36, 64)        0
+_________________________________________________________________
+conv2d_25 (Conv2D)           (None, 35, 35, 128)       32896
+_________________________________________________________________
+max_pooling2d_25 (MaxPooling (None, 17, 17, 128)       0
+_________________________________________________________________
+dropout_31 (Dropout)         (None, 17, 17, 128)       0
+_________________________________________________________________
+conv2d_26 (Conv2D)           (None, 16, 16, 256)       131328
+_________________________________________________________________
+max_pooling2d_26 (MaxPooling (None, 8, 8, 256)         0
+_________________________________________________________________
+dropout_32 (Dropout)         (None, 8, 8, 256)         0
+_________________________________________________________________
+flatten_5 (Flatten)          (None, 16384)             0
+_________________________________________________________________
+dense_11 (Dense)             (None, 3)                 49155
+=================================================================
+Total params: 226,179
+Trainable params: 226,179
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 15:38:48.698196: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 15:38:48.702829: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 8:19 - loss: 1.0986 - accuracy: 0.40622020-02-26 15:38:48.946684: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 15:38:48.951931: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 377s 805ms/step - loss: 0.9858 - accuracy: 0.4907 - val_loss: 0.8306 - val_accuracy: 0.6153
+Epoch 2/30
+468/468 [==============================] - 357s 763ms/step - loss: 0.7858 - accuracy: 0.6365 - val_loss: 0.7235 - val_accuracy: 0.6790
+Epoch 3/30
+468/468 [==============================] - 359s 767ms/step - loss: 0.7487 - accuracy: 0.6570 - val_loss: 0.7306 - val_accuracy: 0.6730
+Epoch 4/30
+468/468 [==============================] - 379s 809ms/step - loss: 0.7273 - accuracy: 0.6667 - val_loss: 0.7040 - val_accuracy: 0.6837
+Epoch 5/30
+468/468 [==============================] - 358s 766ms/step - loss: 0.7045 - accuracy: 0.6882 - val_loss: 0.6924 - val_accuracy: 0.6963
+Epoch 6/30
+468/468 [==============================] - 353s 754ms/step - loss: 0.6951 - accuracy: 0.6962 - val_loss: 0.6944 - val_accuracy: 0.6900
+Epoch 7/30
+468/468 [==============================] - 354s 756ms/step - loss: 0.6728 - accuracy: 0.7053 - val_loss: 0.7305 - val_accuracy: 0.6784
+Epoch 00007: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_5"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_22 (Conv2D)           (None, 299, 299, 32)      416
+_________________________________________________________________
+max_pooling2d_22 (MaxPooling (None, 149, 149, 32)      0
+_________________________________________________________________
+dropout_28 (Dropout)         (None, 149, 149, 32)      0
+_________________________________________________________________
+conv2d_23 (Conv2D)           (None, 148, 148, 32)      4128
+_________________________________________________________________
+max_pooling2d_23 (MaxPooling (None, 74, 74, 32)        0
+_________________________________________________________________
+dropout_29 (Dropout)         (None, 74, 74, 32)        0
+_________________________________________________________________
+conv2d_24 (Conv2D)           (None, 73, 73, 64)        8256
+_________________________________________________________________
+max_pooling2d_24 (MaxPooling (None, 36, 36, 64)        0
+_________________________________________________________________
+dropout_30 (Dropout)         (None, 36, 36, 64)        0
+_________________________________________________________________
+conv2d_25 (Conv2D)           (None, 35, 35, 128)       32896
+_________________________________________________________________
+max_pooling2d_25 (MaxPooling (None, 17, 17, 128)       0
+_________________________________________________________________
+dropout_31 (Dropout)         (None, 17, 17, 128)       0
+_________________________________________________________________
+conv2d_26 (Conv2D)           (None, 16, 16, 256)       131328
+_________________________________________________________________
+max_pooling2d_26 (MaxPooling (None, 8, 8, 256)         0
+_________________________________________________________________
+dropout_32 (Dropout)         (None, 8, 8, 256)         0
+_________________________________________________________________
+flatten_5 (Flatten)          (None, 16384)             0
+_________________________________________________________________
+dense_11 (Dense)             (None, 3)                 49155
+=================================================================
+Total params: 226,179
+Trainable params: 226,179
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 2s 172ms/step - loss: 0.8193 - accuracy: 0.6847
+[0.8193328871645711, 0.6846847]
+11/11 [==============================] - 2s 158ms/step
+Confusion Matrix
+[[ 45  35  18]
+ [  0 127   2]
+ [ 30  20  56]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.60      0.46      0.52        98
+      normal       0.70      0.98      0.82       129
+       virus       0.74      0.53      0.62       106
+
+    accuracy                           0.68       333
+   macro avg       0.68      0.66      0.65       333
+weighted avg       0.68      0.68      0.67       333
+
+[0.8193328871645711, 0.6846847]
+5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+('5', '32', '0', '4', 'adam', '0_001', '0_0')
+5 32 0 4 adam 0.001 0.0
+5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_162107_T
+Model: "sequential_6"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_27 (Conv2D)           (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_27 (MaxPooling (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_33 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_28 (Conv2D)           (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_28 (MaxPooling (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_34 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_29 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_29 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_35 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_30 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_30 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_36 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+conv2d_31 (Conv2D)           (None, 12, 12, 256)       524544
+_________________________________________________________________
+max_pooling2d_31 (MaxPooling (None, 6, 6, 256)         0
+_________________________________________________________________
+dropout_37 (Dropout)         (None, 6, 6, 256)         0
+_________________________________________________________________
+flatten_6 (Flatten)          (None, 9216)              0
+_________________________________________________________________
+dense_12 (Dense)             (None, 3)                 27651
+=================================================================
+Total params: 734,211
+Trainable params: 734,211
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 16:21:09.571034: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 16:21:09.573697: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 6:05 - loss: 1.1037 - accuracy: 0.28122020-02-26 16:21:10.092471: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 16:21:10.099476: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 361s 770ms/step - loss: 1.0691 - accuracy: 0.4064 - val_loss: 1.0570 - val_accuracy: 0.3869
+Epoch 2/30
+468/468 [==============================] - 364s 778ms/step - loss: 0.8926 - accuracy: 0.5613 - val_loss: 0.9950 - val_accuracy: 0.5180
+Epoch 3/30
+468/468 [==============================] - 355s 758ms/step - loss: 0.8235 - accuracy: 0.6112 - val_loss: 0.7693 - val_accuracy: 0.6370
+Epoch 4/30
+468/468 [==============================] - 354s 756ms/step - loss: 0.7474 - accuracy: 0.6557 - val_loss: 0.7528 - val_accuracy: 0.6508
+Epoch 5/30
+468/468 [==============================] - 382s 815ms/step - loss: 0.7153 - accuracy: 0.6728 - val_loss: 0.7092 - val_accuracy: 0.6841
+Epoch 6/30
+468/468 [==============================] - 358s 765ms/step - loss: 0.6934 - accuracy: 0.6872 - val_loss: 0.6830 - val_accuracy: 0.6999
+Epoch 7/30
+468/468 [==============================] - 363s 776ms/step - loss: 0.6711 - accuracy: 0.7019 - val_loss: 0.6680 - val_accuracy: 0.7089
+Epoch 8/30
+468/468 [==============================] - 358s 764ms/step - loss: 0.6526 - accuracy: 0.7113 - val_loss: 0.6862 - val_accuracy: 0.7022
+Epoch 9/30
+468/468 [==============================] - 360s 770ms/step - loss: 0.6413 - accuracy: 0.7195 - val_loss: 0.6393 - val_accuracy: 0.7162
+Epoch 10/30
+468/468 [==============================] - 359s 767ms/step - loss: 0.6270 - accuracy: 0.7269 - val_loss: 0.6287 - val_accuracy: 0.7296
+Epoch 11/30
+468/468 [==============================] - 362s 774ms/step - loss: 0.6158 - accuracy: 0.7365 - val_loss: 0.6431 - val_accuracy: 0.7239
+Epoch 12/30
+468/468 [==============================] - 354s 756ms/step - loss: 0.6044 - accuracy: 0.7353 - val_loss: 0.6812 - val_accuracy: 0.7052
+Epoch 00012: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_6"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_27 (Conv2D)           (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_27 (MaxPooling (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_33 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_28 (Conv2D)           (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_28 (MaxPooling (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_34 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_29 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_29 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_35 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_30 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_30 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_36 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+conv2d_31 (Conv2D)           (None, 12, 12, 256)       524544
+_________________________________________________________________
+max_pooling2d_31 (MaxPooling (None, 6, 6, 256)         0
+_________________________________________________________________
+dropout_37 (Dropout)         (None, 6, 6, 256)         0
+_________________________________________________________________
+flatten_6 (Flatten)          (None, 9216)              0
+_________________________________________________________________
+dense_12 (Dense)             (None, 3)                 27651
+=================================================================
+Total params: 734,211
+Trainable params: 734,211
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 2s 166ms/step - loss: 0.7346 - accuracy: 0.6907
+[0.7345601487904787, 0.6906907]
+11/11 [==============================] - 2s 157ms/step
+Confusion Matrix
+[[ 61  30   7]
+ [  0 128   1]
+ [ 44  21  41]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.58      0.62      0.60        98
+      normal       0.72      0.99      0.83       129
+       virus       0.84      0.39      0.53       106
+
+    accuracy                           0.69       333
+   macro avg       0.71      0.67      0.65       333
+weighted avg       0.71      0.69      0.67       333
+
+[0.7345601487904787, 0.6906907]
+5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_01lr_0_0_dropr_
+('5', '32', '0', '4', 'adam', '0_01', '0_0')
+5 32 0 4 adam 0.01 0.0
+5_conv_32_nodes_0_dense_4_kernelSz_adam_optimizer_0_01lr_0_0_dropr_20200226_173321_T
+Model: "sequential_7"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_32 (Conv2D)           (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_32 (MaxPooling (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_38 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_33 (Conv2D)           (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_33 (MaxPooling (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_39 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_34 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_34 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_40 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_35 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_35 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_41 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+conv2d_36 (Conv2D)           (None, 12, 12, 256)       524544
+_________________________________________________________________
+max_pooling2d_36 (MaxPooling (None, 6, 6, 256)         0
+_________________________________________________________________
+dropout_42 (Dropout)         (None, 6, 6, 256)         0
+_________________________________________________________________
+flatten_7 (Flatten)          (None, 9216)              0
+_________________________________________________________________
+dense_13 (Dense)             (None, 3)                 27651
+=================================================================
+Total params: 734,211
+Trainable params: 734,211
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 17:33:23.521356: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 17:33:23.523822: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 5:30 - loss: 1.0995 - accuracy: 0.25002020-02-26 17:33:24.095203: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 17:33:24.100110: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 392s 838ms/step - loss: 1.0791 - accuracy: 0.3974 - val_loss: 1.0696 - val_accuracy: 0.3962
+Epoch 2/30
+468/468 [==============================] - 401s 857ms/step - loss: 0.9664 - accuracy: 0.4956 - val_loss: 0.8232 - val_accuracy: 0.5922
+Epoch 3/30
+468/468 [==============================] - 372s 795ms/step - loss: 0.7865 - accuracy: 0.6357 - val_loss: 0.7930 - val_accuracy: 0.6301
+Epoch 4/30
+468/468 [==============================] - 356s 762ms/step - loss: 0.7323 - accuracy: 0.6628 - val_loss: 0.7230 - val_accuracy: 0.6805
+Epoch 5/30
+468/468 [==============================] - 355s 759ms/step - loss: 0.6850 - accuracy: 0.6928 - val_loss: 0.6904 - val_accuracy: 0.6894
+Epoch 6/30
+468/468 [==============================] - 385s 822ms/step - loss: 0.6629 - accuracy: 0.7023 - val_loss: 0.6934 - val_accuracy: 0.6924
+Epoch 7/30
+468/468 [==============================] - 354s 755ms/step - loss: 0.6340 - accuracy: 0.7191 - val_loss: 0.6506 - val_accuracy: 0.7105
+Epoch 8/30
+468/468 [==============================] - 358s 764ms/step - loss: 0.6245 - accuracy: 0.7238 - val_loss: 0.6708 - val_accuracy: 0.7058
+Epoch 9/30
+468/468 [==============================] - 354s 757ms/step - loss: 0.6178 - accuracy: 0.7281 - val_loss: 0.6143 - val_accuracy: 0.7285
+Epoch 10/30
+468/468 [==============================] - 354s 755ms/step - loss: 0.5844 - accuracy: 0.7441 - val_loss: 0.6579 - val_accuracy: 0.7245
+Epoch 11/30
+468/468 [==============================] - 356s 762ms/step - loss: 0.5882 - accuracy: 0.7433 - val_loss: 0.6059 - val_accuracy: 0.7373
+Epoch 12/30
+468/468 [==============================] - 364s 778ms/step - loss: 0.5818 - accuracy: 0.7399 - val_loss: 0.6189 - val_accuracy: 0.7263
+Epoch 13/30
+468/468 [==============================] - 374s 799ms/step - loss: 0.5836 - accuracy: 0.7452 - val_loss: 0.6519 - val_accuracy: 0.7099
+Epoch 00013: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_7"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_32 (Conv2D)           (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_32 (MaxPooling (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_38 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_33 (Conv2D)           (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_33 (MaxPooling (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_39 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_34 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_34 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_40 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_35 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_35 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_41 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+conv2d_36 (Conv2D)           (None, 12, 12, 256)       524544
+_________________________________________________________________
+max_pooling2d_36 (MaxPooling (None, 6, 6, 256)         0
+_________________________________________________________________
+dropout_42 (Dropout)         (None, 6, 6, 256)         0
+_________________________________________________________________
+flatten_7 (Flatten)          (None, 9216)              0
+_________________________________________________________________
+dense_13 (Dense)             (None, 3)                 27651
+=================================================================
+Total params: 734,211
+Trainable params: 734,211
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 2s 163ms/step - loss: 0.5677 - accuracy: 0.7357
+[0.5677256990562786, 0.7357357]
+11/11 [==============================] - 2s 154ms/step
+Confusion Matrix
+[[ 79   3  16]
+ [  7 116   6]
+ [ 52   4  50]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.57      0.81      0.67        98
+      normal       0.94      0.90      0.92       129
+       virus       0.69      0.47      0.56       106
+
+    accuracy                           0.74       333
+   macro avg       0.74      0.73      0.72       333
+weighted avg       0.75      0.74      0.73       333
+
+[0.5677256990562786, 0.7357357]
+5_conv_32_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+('5', '32', '1', '3', 'adam', '0_001', '0_0')
+5 32 1 3 adam 0.001 0.0
+5_conv_32_nodes_1_dense_3_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_185302_T
+Model: "sequential_8"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_37 (Conv2D)           (None, 298, 298, 32)      896
+_________________________________________________________________
+max_pooling2d_37 (MaxPooling (None, 149, 149, 32)      0
+_________________________________________________________________
+dropout_43 (Dropout)         (None, 149, 149, 32)      0
+_________________________________________________________________
+conv2d_38 (Conv2D)           (None, 147, 147, 32)      9248
+_________________________________________________________________
+max_pooling2d_38 (MaxPooling (None, 73, 73, 32)        0
+_________________________________________________________________
+dropout_44 (Dropout)         (None, 73, 73, 32)        0
+_________________________________________________________________
+conv2d_39 (Conv2D)           (None, 71, 71, 64)        18496
+_________________________________________________________________
+max_pooling2d_39 (MaxPooling (None, 35, 35, 64)        0
+_________________________________________________________________
+dropout_45 (Dropout)         (None, 35, 35, 64)        0
+_________________________________________________________________
+conv2d_40 (Conv2D)           (None, 33, 33, 128)       73856
+_________________________________________________________________
+max_pooling2d_40 (MaxPooling (None, 16, 16, 128)       0
+_________________________________________________________________
+dropout_46 (Dropout)         (None, 16, 16, 128)       0
+_________________________________________________________________
+conv2d_41 (Conv2D)           (None, 14, 14, 256)       295168
+_________________________________________________________________
+max_pooling2d_41 (MaxPooling (None, 7, 7, 256)         0
+_________________________________________________________________
+dropout_47 (Dropout)         (None, 7, 7, 256)         0
+_________________________________________________________________
+flatten_8 (Flatten)          (None, 12544)             0
+_________________________________________________________________
+dense_14 (Dense)             (None, 512)               6423040
+_________________________________________________________________
+activation_6 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_48 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_15 (Dense)             (None, 3)                 1539
+=================================================================
+Total params: 6,822,243
+Trainable params: 6,822,243
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 18:53:05.131666: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 18:53:05.133802: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 9:16 - loss: 1.0988 - accuracy: 0.25002020-02-26 18:53:05.343793: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 18:53:05.348235: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 359s 767ms/step - loss: 0.9519 - accuracy: 0.5118 - val_loss: 0.8249 - val_accuracy: 0.5946
+Epoch 2/30
+468/468 [==============================] - 355s 759ms/step - loss: 0.7859 - accuracy: 0.6359 - val_loss: 0.7544 - val_accuracy: 0.6458
+Epoch 3/30
+468/468 [==============================] - 357s 762ms/step - loss: 0.7360 - accuracy: 0.6612 - val_loss: 0.7006 - val_accuracy: 0.6880
+Epoch 4/30
+468/468 [==============================] - 353s 754ms/step - loss: 0.6997 - accuracy: 0.6803 - val_loss: 0.7648 - val_accuracy: 0.6419
+Epoch 5/30
+468/468 [==============================] - 355s 758ms/step - loss: 0.6760 - accuracy: 0.6957 - val_loss: 0.7025 - val_accuracy: 0.6778
+Epoch 00005: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_8"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_37 (Conv2D)           (None, 298, 298, 32)      896
+_________________________________________________________________
+max_pooling2d_37 (MaxPooling (None, 149, 149, 32)      0
+_________________________________________________________________
+dropout_43 (Dropout)         (None, 149, 149, 32)      0
+_________________________________________________________________
+conv2d_38 (Conv2D)           (None, 147, 147, 32)      9248
+_________________________________________________________________
+max_pooling2d_38 (MaxPooling (None, 73, 73, 32)        0
+_________________________________________________________________
+dropout_44 (Dropout)         (None, 73, 73, 32)        0
+_________________________________________________________________
+conv2d_39 (Conv2D)           (None, 71, 71, 64)        18496
+_________________________________________________________________
+max_pooling2d_39 (MaxPooling (None, 35, 35, 64)        0
+_________________________________________________________________
+dropout_45 (Dropout)         (None, 35, 35, 64)        0
+_________________________________________________________________
+conv2d_40 (Conv2D)           (None, 33, 33, 128)       73856
+_________________________________________________________________
+max_pooling2d_40 (MaxPooling (None, 16, 16, 128)       0
+_________________________________________________________________
+dropout_46 (Dropout)         (None, 16, 16, 128)       0
+_________________________________________________________________
+conv2d_41 (Conv2D)           (None, 14, 14, 256)       295168
+_________________________________________________________________
+max_pooling2d_41 (MaxPooling (None, 7, 7, 256)         0
+_________________________________________________________________
+dropout_47 (Dropout)         (None, 7, 7, 256)         0
+_________________________________________________________________
+flatten_8 (Flatten)          (None, 12544)             0
+_________________________________________________________________
+dense_14 (Dense)             (None, 512)               6423040
+_________________________________________________________________
+activation_6 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_48 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_15 (Dense)             (None, 3)                 1539
+=================================================================
+Total params: 6,822,243
+Trainable params: 6,822,243
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 2s 174ms/step - loss: 0.6221 - accuracy: 0.6847
+[0.6220880421725187, 0.6846847]
+11/11 [==============================] - 2s 157ms/step
+Confusion Matrix
+[[ 38   8  52]
+ [  1 116  12]
+ [ 24   8  74]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.60      0.39      0.47        98
+      normal       0.88      0.90      0.89       129
+       virus       0.54      0.70      0.61       106
+
+    accuracy                           0.68       333
+   macro avg       0.67      0.66      0.66       333
+weighted avg       0.69      0.68      0.68       333
+
+[0.6220880421725187, 0.6846847]
+5_conv_32_nodes_1_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_
+('5', '32', '1', '4', 'adam', '0_001', '0_0')
+5 32 1 4 adam 0.001 0.0
+5_conv_32_nodes_1_dense_4_kernelSz_adam_optimizer_0_001lr_0_0_dropr_20200226_192246_T
+Model: "sequential_9"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_42 (Conv2D)           (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_42 (MaxPooling (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_49 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_43 (Conv2D)           (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_43 (MaxPooling (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_50 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_44 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_44 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_51 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_45 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_45 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_52 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+conv2d_46 (Conv2D)           (None, 12, 12, 256)       524544
+_________________________________________________________________
+max_pooling2d_46 (MaxPooling (None, 6, 6, 256)         0
+_________________________________________________________________
+dropout_53 (Dropout)         (None, 6, 6, 256)         0
+_________________________________________________________________
+flatten_9 (Flatten)          (None, 9216)              0
+_________________________________________________________________
+dense_16 (Dense)             (None, 512)               4719104
+_________________________________________________________________
+activation_7 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_54 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_17 (Dense)             (None, 3)                 1539
+=================================================================
+Total params: 5,427,203
+Trainable params: 5,427,203
+Non-trainable params: 0
+_________________________________________________________________
+None
+Found 2321 images belonging to 3 classes.
+Found 663 images belonging to 3 classes.
+Epoch 1/30
+2020-02-26 19:22:48.933938: I tensorflow/core/profiler/lib/profiler_session.cc:184] Profiler session started.
+2020-02-26 19:22:48.936244: W tensorflow/core/profiler/lib/profiler_session.cc:192] Encountered error while starting profiler: Unavailable: CUPTI error: CUPTI could not be loaded or symbol could not be found.
+  1/468 [..............................] - ETA: 5:25 - loss: 1.0990 - accuracy: 0.34382020-02-26 19:22:49.505169: I tensorflow/core/platform/default/device_tracer.cc:588] Collecting 0 kernel records, 0 memcpy records.
+2020-02-26 19:22:49.511152: E tensorflow/core/platform/default/device_tracer.cc:70] CUPTI error: CUPTI could not be loaded or symbol could not be found.
+468/468 [==============================] - 365s 780ms/step - loss: 1.0572 - accuracy: 0.4248 - val_loss: 0.9070 - val_accuracy: 0.5549
+Epoch 2/30
+468/468 [==============================] - 361s 772ms/step - loss: 0.8668 - accuracy: 0.5833 - val_loss: 0.7875 - val_accuracy: 0.6381
+Epoch 3/30
+468/468 [==============================] - 366s 783ms/step - loss: 0.7555 - accuracy: 0.6538 - val_loss: 0.7477 - val_accuracy: 0.6537
+Epoch 4/30
+468/468 [==============================] - 363s 776ms/step - loss: 0.7155 - accuracy: 0.6789 - val_loss: 0.7189 - val_accuracy: 0.6756
+Epoch 5/30
+468/468 [==============================] - 366s 781ms/step - loss: 0.6923 - accuracy: 0.6939 - val_loss: 0.7060 - val_accuracy: 0.6849
+Epoch 6/30
+468/468 [==============================] - 362s 773ms/step - loss: 0.6764 - accuracy: 0.7002 - val_loss: 0.6877 - val_accuracy: 0.6910
+Epoch 7/30
+468/468 [==============================] - 362s 773ms/step - loss: 0.6657 - accuracy: 0.7112 - val_loss: 0.6749 - val_accuracy: 0.7034
+Epoch 8/30
+468/468 [==============================] - 365s 779ms/step - loss: 0.6528 - accuracy: 0.7173 - val_loss: 0.6592 - val_accuracy: 0.7141
+Epoch 9/30
+468/468 [==============================] - 361s 771ms/step - loss: 0.6479 - accuracy: 0.7196 - val_loss: 0.6480 - val_accuracy: 0.7164
+Epoch 10/30
+468/468 [==============================] - 364s 777ms/step - loss: 0.6281 - accuracy: 0.7282 - val_loss: 0.6517 - val_accuracy: 0.7123
+Epoch 11/30
+468/468 [==============================] - 362s 774ms/step - loss: 0.6155 - accuracy: 0.7342 - val_loss: 0.6318 - val_accuracy: 0.7243
+Epoch 12/30
+468/468 [==============================] - 361s 772ms/step - loss: 0.5976 - accuracy: 0.7435 - val_loss: 0.6555 - val_accuracy: 0.7014
+Epoch 13/30
+468/468 [==============================] - 366s 781ms/step - loss: 0.5970 - accuracy: 0.7449 - val_loss: 0.6276 - val_accuracy: 0.7253
+Epoch 14/30
+468/468 [==============================] - 362s 774ms/step - loss: 0.5820 - accuracy: 0.7491 - val_loss: 0.6157 - val_accuracy: 0.7352
+Epoch 15/30
+468/468 [==============================] - 365s 779ms/step - loss: 0.5741 - accuracy: 0.7552 - val_loss: 0.6233 - val_accuracy: 0.7411
+Epoch 16/30
+468/468 [==============================] - 365s 780ms/step - loss: 0.5672 - accuracy: 0.7594 - val_loss: 0.5708 - val_accuracy: 0.7519
+Epoch 17/30
+468/468 [==============================] - 364s 779ms/step - loss: 0.5569 - accuracy: 0.7617 - val_loss: 0.6492 - val_accuracy: 0.7243
+Epoch 18/30
+468/468 [==============================] - 375s 802ms/step - loss: 0.5498 - accuracy: 0.7648 - val_loss: 0.5837 - val_accuracy: 0.7515
+Epoch 00018: early stopping
+Found 333 images belonging to 3 classes.
+Model: "sequential_9"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #
+=================================================================
+conv2d_42 (Conv2D)           (None, 297, 297, 32)      1568
+_________________________________________________________________
+max_pooling2d_42 (MaxPooling (None, 148, 148, 32)      0
+_________________________________________________________________
+dropout_49 (Dropout)         (None, 148, 148, 32)      0
+_________________________________________________________________
+conv2d_43 (Conv2D)           (None, 145, 145, 32)      16416
+_________________________________________________________________
+max_pooling2d_43 (MaxPooling (None, 72, 72, 32)        0
+_________________________________________________________________
+dropout_50 (Dropout)         (None, 72, 72, 32)        0
+_________________________________________________________________
+conv2d_44 (Conv2D)           (None, 69, 69, 64)        32832
+_________________________________________________________________
+max_pooling2d_44 (MaxPooling (None, 34, 34, 64)        0
+_________________________________________________________________
+dropout_51 (Dropout)         (None, 34, 34, 64)        0
+_________________________________________________________________
+conv2d_45 (Conv2D)           (None, 31, 31, 128)       131200
+_________________________________________________________________
+max_pooling2d_45 (MaxPooling (None, 15, 15, 128)       0
+_________________________________________________________________
+dropout_52 (Dropout)         (None, 15, 15, 128)       0
+_________________________________________________________________
+conv2d_46 (Conv2D)           (None, 12, 12, 256)       524544
+_________________________________________________________________
+max_pooling2d_46 (MaxPooling (None, 6, 6, 256)         0
+_________________________________________________________________
+dropout_53 (Dropout)         (None, 6, 6, 256)         0
+_________________________________________________________________
+flatten_9 (Flatten)          (None, 9216)              0
+_________________________________________________________________
+dense_16 (Dense)             (None, 512)               4719104
+_________________________________________________________________
+activation_7 (Activation)    (None, 512)               0
+_________________________________________________________________
+dropout_54 (Dropout)         (None, 512)               0
+_________________________________________________________________
+dense_17 (Dense)             (None, 3)                 1539
+=================================================================
+Total params: 5,427,203
+Trainable params: 5,427,203
+Non-trainable params: 0
+_________________________________________________________________
+None
+11/11 [==============================] - 2s 176ms/step - loss: 0.5503 - accuracy: 0.7718
+[0.5502813824198463, 0.7717718]
+11/11 [==============================] - 2s 168ms/step
+Confusion Matrix
+[[ 56   9  33]
+ [  0 123   6]
+ [ 20   8  78]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.74      0.57      0.64        98
+      normal       0.88      0.95      0.91       129
+       virus       0.67      0.74      0.70       106
+
+    accuracy                           0.77       333
+   macro avg       0.76      0.75      0.75       333
+weighted avg       0.77      0.77      0.77       333
+
+[0.5502813824198463, 0.7717718]

@@ -1,0 +1,90 @@
+VGG16				
+Confusion Matrix				
+[[ 42  18  38]				
+ [  0 129   0]				
+ [  8  16  82]]				
+Classification Report				
+              precision    recall  f1-score   support				
+				
+    bacteria       0.84      0.43      0.57        98				
+      normal       0.79      1.00      0.88       129				
+       virus       0.68      0.77      0.73       106				
+				
+    accuracy                           0.76       333				
+   macro avg       0.77      0.73      0.73       333				
+weighted avg       0.77      0.76      0.74       333				
+				
+[0.9742673909826077, 0.7597598]				
+
+
+VGG19				
+Confusion Matrix				
+[[ 51  37  10]				
+ [  0 129   0]				
+ [ 27  33  46]]				
+Classification Report				
+              precision    recall  f1-score   support				
+				
+    bacteria       0.65      0.52      0.58        98				
+      normal       0.65      1.00      0.79       129				
+       virus       0.82      0.43      0.57       106				
+				
+    accuracy                           0.68       333				
+   macro avg       0.71      0.65      0.64       333				
+weighted avg       0.71      0.68      0.66       333				
+				
+[1.3479589058186485, 0.6786787]				
+
+ResNet50V2				
+Confusion Matrix				
+[[ 10  45  43]				
+ [  0 128   1]				
+ [ 11  36  59]]				
+Classification Report				
+              precision    recall  f1-score   support				
+				
+    bacteria       0.48      0.10      0.17        98				
+      normal       0.61      0.99      0.76       129				
+       virus       0.57      0.56      0.56       106				
+				
+    accuracy                           0.59       333				
+   macro avg       0.55      0.55      0.50       333				
+weighted avg       0.56      0.59      0.52       333				
+				
+[2.7568682125050517, 0.5915916]				
+
+ImageNetV3
+Confusion Matrix
+[[ 21  74   3]
+ [  2 126   1]
+ [ 29  74   3]]
+Classification Report
+              precision    recall  f1-score   support
+
+    bacteria       0.40      0.21      0.28        98
+      normal       0.46      0.98      0.63       129
+       virus       0.43      0.03      0.05       106
+
+    accuracy                           0.45       333
+   macro avg       0.43      0.41      0.32       333
+weighted avg       0.43      0.45      0.34       333
+
+[2.961015001627278, 0.45045045]
+
+BestModel
+Confusion Matrix				
+[[ 71   8  19]				
+ [  1 125   3]				
+ [ 30   9  67]]				
+Classification Report				
+              precision    recall  f1-score   support				
+				
+    bacteria       0.70      0.72      0.71        98				
+      normal       0.88      0.97      0.92       129				
+       virus       0.75      0.63      0.69       106				
+				
+    accuracy                           0.79       333				
+   macro avg       0.78      0.78      0.77       333				
+weighted avg       0.79      0.79      0.79       333				
+				
+[0.4844732511449944, 0.7897898]				

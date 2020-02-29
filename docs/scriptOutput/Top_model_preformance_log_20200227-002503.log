@@ -1,0 +1,60 @@
+modelFromBestStructure_150_64_20200227-002504,[0.561326723207127, 0.7537538],[[ 51   9  38]
+ [  7 117   5]
+ [ 16   7  83]],              precision    recall  f1-score   support
+
+    bacteria       0.69      0.52      0.59        98
+      normal       0.88      0.91      0.89       129
+       virus       0.66      0.78      0.72       106
+
+    accuracy                           0.75       333
+   macro avg       0.74      0.74      0.73       333
+weighted avg       0.75      0.75      0.75       333
+
+modelFromBestStructure_150_32_20200227-004350,[0.5848517641425133, 0.7447447],[[ 68  15  15]
+ [  2 126   1]
+ [ 42  10  54]],              precision    recall  f1-score   support
+
+    bacteria       0.61      0.69      0.65        98
+      normal       0.83      0.98      0.90       129
+       virus       0.77      0.51      0.61       106
+
+    accuracy                           0.74       333
+   macro avg       0.74      0.73      0.72       333
+weighted avg       0.75      0.74      0.73       333
+
+modelFromBestStructure_150_16_20200227-005757,[0.6063504273241217, 0.7117117],[[ 64   9  25]
+ [ 12 109   8]
+ [ 37   5  64]],              precision    recall  f1-score   support
+
+    bacteria       0.57      0.65      0.61        98
+      normal       0.89      0.84      0.87       129
+       virus       0.66      0.60      0.63       106
+
+    accuracy                           0.71       333
+   macro avg       0.70      0.70      0.70       333
+weighted avg       0.72      0.71      0.71       333
+
+modelFromBestStructure_150_12_20200227-011713,[0.6853103962811556, 0.6816817],[[ 45  23  30]
+ [  5 114  10]
+ [ 30   8  68]],              precision    recall  f1-score   support
+
+    bacteria       0.56      0.46      0.51        98
+      normal       0.79      0.88      0.83       129
+       virus       0.63      0.64      0.64       106
+
+    accuracy                           0.68       333
+   macro avg       0.66      0.66      0.66       333
+weighted avg       0.67      0.68      0.67       333
+
+modelFromBestStructure_150_8_20200227-012521,[0.6510399200699546, 0.7117117],[[ 35  27  36]
+ [  5 120   4]
+ [ 11  13  82]],              precision    recall  f1-score   support
+
+    bacteria       0.69      0.36      0.47        98
+      normal       0.75      0.93      0.83       129
+       virus       0.67      0.77      0.72       106
+
+    accuracy                           0.71       333
+   macro avg       0.70      0.69      0.67       333
+weighted avg       0.71      0.71      0.69       333
+

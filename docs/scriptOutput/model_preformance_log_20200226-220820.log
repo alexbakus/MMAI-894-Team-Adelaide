@@ -1,0 +1,48 @@
+modelFromBestStructure_150_20200226-220821,[0.6409927146001295, 0.7237237],[[ 70  10  18]
+ [ 10 113   6]
+ [ 41   7  58]],              precision    recall  f1-score   support
+
+    bacteria       0.58      0.71      0.64        98
+      normal       0.87      0.88      0.87       129
+       virus       0.71      0.55      0.62       106
+
+    accuracy                           0.72       333
+   macro avg       0.72      0.71      0.71       333
+weighted avg       0.73      0.72      0.72       333
+
+modelFromBestStructure_200_20200226-221822,[0.5862451087344777, 0.7267267],[[ 80   7  11]
+ [  5 122   2]
+ [ 58   8  40]],              precision    recall  f1-score   support
+
+    bacteria       0.56      0.82      0.66        98
+      normal       0.89      0.95      0.92       129
+       virus       0.75      0.38      0.50       106
+
+    accuracy                           0.73       333
+   macro avg       0.73      0.71      0.69       333
+weighted avg       0.75      0.73      0.71       333
+
+modelFromBestStructure_250_20200226-223713,[0.5932089699940248, 0.7297297],[[ 60  15  23]
+ [  2 122   5]
+ [ 33  12  61]],              precision    recall  f1-score   support
+
+    bacteria       0.63      0.61      0.62        98
+      normal       0.82      0.95      0.88       129
+       virus       0.69      0.58      0.63       106
+
+    accuracy                           0.73       333
+   macro avg       0.71      0.71      0.71       333
+weighted avg       0.72      0.73      0.72       333
+
+modelFromBestStructure_300_20200226-231419,[0.5653531713919207, 0.7447447],[[ 51   8  39]
+ [  4 116   9]
+ [ 18   7  81]],              precision    recall  f1-score   support
+
+    bacteria       0.70      0.52      0.60        98
+      normal       0.89      0.90      0.89       129
+       virus       0.63      0.76      0.69       106
+
+    accuracy                           0.74       333
+   macro avg       0.74      0.73      0.73       333
+weighted avg       0.75      0.74      0.74       333
+
