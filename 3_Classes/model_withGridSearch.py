@@ -1,5 +1,5 @@
 # importing libraries
-from keras.preprocessing.image import ImageDataGenerator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator
 
 # from keras.models import Sequential
 '''from tensorflow.keras.models import Sequential
@@ -52,8 +52,8 @@ for file_ in allFiles:
     print (file_.split('\\')[-1][:-20])
     trainedModel_list.append(file_.split('\\')[-1][:-20])
 
-train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/train'
-validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(img_width)+'/validation'
+train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/train'
+validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/validation'
 nb_train_samples = 10000
 nb_validation_samples = 2700
 epochs = 15
@@ -72,8 +72,8 @@ conv_layers = [3,4,5]
 learn_rates = [0.001, 0.01]
 optimizers = ['adam','sgd']
 kernel_sizes = [2, 3, 4]
-dropout_rates = [0.0, 0.25]
-momentums = [0.0, 0.2, 0.4, 0.6, 0.8, 0.9]
+dropout_rates = [0.0, 0.25,0.5]
+#momentums = [0.0, 0.2, 0.4, 0.6, 0.8, 0.9]
 
 for dense_layer in dense_layers:
     for layer_size in layer_sizes:
@@ -166,14 +166,21 @@ for dense_layer in dense_layers:
                                     height_shift_range=0.2,
                                     horizontal_flip=True)
 
-                                test_datagen = ImageDataGenerator(rescale=1. / 255)
+                                val_datagen = ImageDataGenerator(
+                                    rescale=1. / 255,
+                                    shear_range=0.2,
+                                    rotation_range=40,
+                                    zoom_range=0.2,
+                                    width_shift_range=0.2,
+                                    height_shift_range=0.2,
+                                    horizontal_flip=True)
 
                                 train_generator = train_datagen.flow_from_directory(
                                     train_data_dir,
                                     target_size=(img_width, img_height),
                                     batch_size=batch_size, class_mode='categorical')
 
-                                validation_generator = test_datagen.flow_from_directory(
+                                validation_generator = val_datagen.flow_from_directory(
                                     validation_data_dir,
                                     target_size=(img_width, img_height),
                                     batch_size=batch_size, class_mode='categorical')

@@ -1,0 +1,12 @@
+modelFromBestStructure_150_320_0001_20200227-203509,[0.5464557639577172, 0.7777778],[[ 64   9  25]
+ [  2 125   2]
+ [ 26  10  70]],              precision    recall  f1-score   support
+
+    bacteria       0.70      0.65      0.67        98
+      normal       0.87      0.97      0.92       129
+       virus       0.72      0.66      0.69       106
+
+    accuracy                           0.78       333
+   macro avg       0.76      0.76      0.76       333
+weighted avg       0.77      0.78      0.77       333
+

@@ -67,8 +67,11 @@ for file_ in top_model_allFiles:
 
 train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/train'
 validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/val'
+test_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/test'
 
-
+trainning_time = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+modelPreformanceLog = open('model_preformance_log_'+trainning_time+'.log','w')
+modelPreformanceLog.close()
 
 nb_train_samples = 15000
 nb_validation_samples = 5000
@@ -80,6 +83,7 @@ if k.image_data_format() == 'channels_first':
 else:
     input_shape = (img_width, img_height, 3)
 
+model_performance_list = []
 
 for eachTopModel in top_model_allFiles:
     modelNamePart = eachTopModel.split('\\')[-1][9:-20]
@@ -180,4 +184,33 @@ for eachTopModel in top_model_allFiles:
                         validation_data=validation_generator,
                         validation_steps=nb_validation_samples // batch_size,
                         callbacks=[tensorboard_callback, es_callback, checkpoint_callback])
+
+    test_datagen = ImageDataGenerator(rescale=1. / 255)
+
+    test_generator = test_datagen.flow_from_directory(
+        test_data_dir,
+        shuffle=False,
+        target_size=(img_width, img_height),
+        class_mode='categorical')
+
+    # Confution Matrix and Classification Report
+    print(model.summary())
+    score = model.evaluate_generator(test_generator, verbose=1)
+    print(score)
+
+    # Confution Matrix and Classification Report
+    Y_pred = model.predict_generator(test_generator, verbose=1)
+    y_pred = np.argmax(Y_pred, axis=1)
+    print('Confusion Matrix')
+    cm = confusion_matrix(test_generator.classes, y_pred)
+    print(cm)
+    print('Classification Report')
+    target_names = ['bacteria', 'normal', 'virus']
+    cr = classification_report(test_generator.classes, y_pred, target_names=target_names)
+    print(cr)
+    print(score)
+
+    modelPreformanceLog = open('model_preformance_log_' + trainning_time + '.log', 'a')
+    modelPreformanceLog.write(NAME+','+str(score)+','+str(cm)+','+str(cr)+'\n')
+    modelPreformanceLog.close()
 

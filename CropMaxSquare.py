@@ -3,13 +3,13 @@ import os
 from PIL import Image
 from operator import itemgetter
 
-path_normal = 'NORMAL'
-path_pneumnia = 'PNEUMONIA'
+path_normal = 'RawData\\NORMAL'
+path_pneumnia = 'RawData\\PNEUMONIA'
 
 # the code trys to corp/export center of the original img so that lung is the focus, but if the picture is too large
 # the code will first shrink it down to 1024x1024 with anti-alising filter then corp to limit x limit
 
-limit = 400
+limit = 300
 zoom_factor = 0.95
 
 root_export = 'center_crop_'+str(limit)+'\\'
@@ -49,7 +49,8 @@ for eachImg in normalImgList:
     width, height = im.size
     if(width >= limit and height >= limit):
         im_center_crop = crop_max_square(im,zoom_factor)
-        im_center_crop.save(normal_export+eachImg.split('\\')[1])
+        im_center_crop = im_center_crop.resize((limit, limit), Image.ANTIALIAS)
+        im_center_crop.save(normal_export+eachImg.split('\\')[2])
         normalExport_count += 1
         #imgSizeList.append((width, height))
 
@@ -62,7 +63,8 @@ for eachImg in virusImgList:
     width, height = im.size
     if(width >= limit and height >= limit):
         im_center_crop = crop_max_square(im,zoom_factor)
-        im_center_crop.save(virus_export+eachImg.split('\\')[1])
+        im_center_crop = im_center_crop.resize((limit, limit), Image.ANTIALIAS)
+        im_center_crop.save(virus_export+eachImg.split('\\')[2])
         #imgSizeList.append((width, height))
         virusExport_count += 1
 
@@ -74,7 +76,8 @@ for eachImg in bacteriaImgList:
     width, height = im.size
     if(width >= limit and height >= limit):
         im_center_crop = crop_max_square(im,zoom_factor)
-        im_center_crop.save(bacteria_export+eachImg.split('\\')[1])
+        im_center_crop = im_center_crop.resize((limit, limit), Image.ANTIALIAS)
+        im_center_crop.save(bacteria_export+eachImg.split('\\')[2])
         bacteriaExport_count += 1
         #imgSizeList.append((width, height))
 
