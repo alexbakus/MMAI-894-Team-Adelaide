@@ -38,8 +38,7 @@ center_crop_300
 ```
 ### Data Cleanning
 We noticed that a significant x-ray images consist man-made objects, such as medical equipments. To avoid potential data leakage, we mannually deleted. 
-[maxCropEffect](docs/screenshots/maxCrop.PNG)
+![maxCropEffect](docs/screenshots/maxCrop.PNG)
 
-http://github.com - automatic!
-[GitHub](http://github.com)
+
 
