@@ -1,37 +1,5 @@
 # MMAI-894-Team-Adelaide
 Deep Learning Team Project
-- [MMAI-894-Team-Adelaide](#mmai-894-team-adelaide)
-  * [Introduction](#introduction)
-    + [Objectives and Approach](#objectives-and-approach)
-  * [Data Preparation](#data-preparation)
-    + [Dataset Source](#dataset-source)
-    + [Creating  Classes Base on File Names](#creating--classes-base-on-file-names)
-    + [Data Cleanning](#data-cleanning)
-    + [Final Data For ML Input](#final-data-for-ml-input)
-    + [Train Test Split](#train-test-split)
-  * [Experimnentation](#experimnentation)
-    + [‘Grid Searching’ Best Models](#-grid-searching--best-models)
-  * [Model Trainning](#model-trainning)
-    + [Hardware Acceleration](#hardware-acceleration)
-    + [Dynamically Create Model](#dynamically-create-model)
-    + [ImageGenerators](#imagegenerators)
-      - [.flow_from_directory](#flow-from-directory)
-    + [Training Progress Monitoring and Model Saving](#training-progress-monitoring-and-model-saving)
-      - [Tensorbaord Callback](#tensorbaord-callback)
-      - [EarlyStop Callback](#earlystop-callback)
-      - [CheckPoint Callback](#checkpoint-callback)
-    + [.fit_generator](#fit-generator)
-    + [Identify the Top Model](#identify-the-top-model)
-  * [The Best Preforming Model](#the-best-preforming-model)
-    + [Model Classification Report](#model-classification-report)
-    + [Effect of Using Larger Input Size/Resolution](#effect-of-using-larger-input-size-resolution)
-    + [Effect of Using Different Batch Size](#effect-of-using-different-batch-size)
-    + [Effect of Learning Rate](#effect-of-learning-rate)
-    + [Compare with Transfer Learning](#compare-with-transfer-learning)
-    + [Visualizing Layers](#visualizing-layers)
-  * [Future Scope](#future-scope)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Introduction
 According to the World Health Organization, pneumonia is the single most significant infectious cause of death in children worldwide. This disease is responsible for 15% of all deaths of children under the age of five, killing over 800,000 in 2017 or around 2,200 every day, mostly in South Asia and West and Central Africa. Children whose immune system may be weakened by malnutrition or undernourishment, especially in infants who are not exclusively breastfed. There are 1,400 cases of pneumonia per 100,000 children, or 1 per 71 children. 
@@ -42,6 +10,9 @@ This disease, however, does not occur exclusively in children alone. This diseas
 There can be various contributors to the pneumonia mortality rate in children like malnutrition, air pollution, second-home smoke etc. However, this report focuses on the problem of differentiating a healthy lung from pneumonia-positive (bacteria and virus infected) via X-ray images. Our initial objective of this report was to come up with a CNN model to classify the X-ray images of the lung between normal vs pneumonia. However, according to the new study, the researchers found that patients diagnosed with bacterial pneumonia had a higher risk of heart attack, stroke or death, compared with patients diagnosed with viral pneumonia. Therefore, we have extended our model from two classifiers to three classifiers: 1) normal vs 2) pneumonia-bacteria and 3) pneumonia-viral. 
 
 ## Data Preparation
+The data preparation process is described in the following chart.
+![dataprepflow](docs/screenshots/dataprepflow.png)
+
 ### Dataset Source
 The [original data](https://data.mendeley.com/datasets/rscbjbr9sj/) is collected from Mendeley, Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images.
 
@@ -80,14 +51,27 @@ center_crop_300
 We noticed that a significant x-ray images consist man-made objects, such as medical equipments. To avoid potential data leakage, we mannually deleted. The remained data is saved in the directory named [center_crop_clean_300](center_crop_clean_300/)
 ![maxCropEffect](docs/screenshots/maxCrop.PNG)
 
-### Final Data For ML Input
 Once these preprocessing steps were completed, we proceeded with various experiment configurations of convolutional neural networks. The details of which will be discussed in the succeeding section.
 ![fileDistribution](docs/screenshots/filedistribution.PNG)
 
 ### Train Test Split
 Common to many proper Machine Learning process, the pre-processed images are splinted at ratio of 70% for training, 20% for validation, and 10% for test evaluation. This process is done by the script [Creat3Splits.py](Creat3Splits.py)
 
-## Experimnentation
+  ```python
+  import split_folders
+
+# Split with a ratio.
+# To only split into training and validation set, set a tuple to `ratio`, i.e, `(.8, .2)`.
+
+input_folder = 'center_crop_clean_300\\'
+output_folder = 'data_3C_from_center_crop_clean_300_to_300'
+split_folders.ratio(input_folder, output=output_folder, seed=1337, ratio=(.7, .2, .1)) # default values
+```
+The output of the script will be the [input of the ML process](3_Classes/data_3C_from_center_crop_clean_300_to_300). 
+## Experimentation
+The experimentation process is described in the following chart:
+![expFlow](docs/screenshots/exprementationFlow.png)
+
 ### ‘Grid Searching’ Best Models
 As training a CNN can be computationally expensive, and grid search method of hyper parameter tuning is also very computationally expensive, with limited time in mind, the team have chosen the following commonly tuned hyper parameters:
 <table style="border-collapse:collapse;border-spacing:0;border-color:#ccc;table-layout: fixed; width: 710px" class="tg"><colgroup><col style="width: 431px"><col style="width: 279px"></colgroup><tr><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:right;vertical-align:top">Hyper parameters</th><th style="font-family:Arial, sans-serif;font-size:14px;font-weight:normal;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f0f0f0;text-align:left;vertical-align:top">Values Searched</th></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Number of Convolution Layers</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">3, 4, 5</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:right;vertical-align:top">First Convolution Layer Size (subsequent layers are multiples of 2’s of the first layer and their layer number-1)</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:left;vertical-align:top"><br>16, 32</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Number of Densely connected layers (actual number of neurons per dense layer is either 256 or 512 )</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">0, 1, 2</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:right;vertical-align:top">Learning Rate</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:left;vertical-align:top">0.001, 0.01</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Kernel Size</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">2, 3, 4</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:right;vertical-align:top">Dropout Rates</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:left;vertical-align:top">0%, 25%, 50%</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Batch Size</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">32</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:right;vertical-align:top">Max Epochs</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:left;vertical-align:top">15</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Activation Function</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">Relu</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:right;vertical-align:top">Padding Method</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:left;vertical-align:top">Valid</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Kernel Initializer</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">Random Uniform</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:right;vertical-align:top">Optimizer</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:left;vertical-align:top">Adam, SGD (Stochastic Gradient Descent)</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Loss Function</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">Categorical Crossentropy</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:right;vertical-align:top">Training Patients</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#fff;text-align:left;vertical-align:top">2</td></tr><tr><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:right;vertical-align:top">Input Size</td><td style="font-family:Arial, sans-serif;font-size:14px;padding:10px 5px;border-style:solid;border-width:1px;overflow:hidden;word-break:normal;border-color:#ccc;color:#333;background-color:#f9f9f9;text-align:left;vertical-align:top">200x200x3</td></tr></table>
