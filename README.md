@@ -3,7 +3,8 @@ Deep Learning Team Project
 
 ## Data Preparation
 ### Dataset Source
-The original data is collected from Mendeley, Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images: https://data.mendeley.com/datasets/rscbjbr9sj/3
+The [original data](https://data.mendeley.com/datasets/rscbjbr9sj/) is collected from Mendeley, Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images.
+
 This raw data contains many datasets and we are using the 'NORMAL' and 'PNEUMONIA' sorted as 2 classes by the folder structure. 
 ```
 RawData
@@ -35,4 +36,9 @@ center_crop_300
     │   ...
 ```
 ### Data Cleanning
-We noticed that a significant x-ray images consist man-made objects, such as medical equipments. To avoid potential data leakage, we mannually deleted 
+We noticed that a significant x-ray images consist man-made objects, such as medical equipments. To avoid potential data leakage, we mannually deleted. 
+![maxCropEffect](docs/screenshots/maxCrop.PNG)
+
+http://github.com - automatic!
+[GitHub](http://github.com)
+
