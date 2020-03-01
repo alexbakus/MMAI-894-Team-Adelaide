@@ -21,7 +21,7 @@ Deep Learning Team Project
         * [CheckPoint Callback](#checkpoint-callback)
       - [.fit_generator](#fit-generator)
     + [Identify the Top Model](#identify-the-top-model)
-  * [The Best Preforming Model](#the-best-preforming-model)
+  * [Design of The Best Preforming Model](#design-of-the-best-preforming-model)
     + [Model Classification Report](#model-classification-report)
     + [Effect of Using Larger Input Size/Resolution](#effect-of-using-larger-input-size-resolution)
     + [Effect of Using Different Batch Size](#effect-of-using-different-batch-size)
@@ -36,6 +36,7 @@ Deep Learning Team Project
   * [Future Scope](#future-scope)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
 
 ## Introduction
 According to the World Health Organization, pneumonia is the single most significant infectious cause of death in children worldwide. This disease is responsible for 15% of all deaths of children under the age of five, killing over 800,000 in 2017 or around 2,200 every day, mostly in South Asia and West and Central Africa. Children whose immune system may be weakened by malnutrition or undernourishment, especially in infants who are not exclusively breastfed. There are 1,400 cases of pneumonia per 100,000 children, or 1 per 71 children. 
