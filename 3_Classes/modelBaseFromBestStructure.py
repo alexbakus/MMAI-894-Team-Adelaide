@@ -45,6 +45,8 @@ imgSize_list = [150,200,250,300]
 batch_size_list =[64,32,16,12,8]
 #learning_rate_list = [0.0001,0.001,0.01,0.1,1]
 learning_rate_list = [0.001]
+
+# by modifying the for loop, this script allows user to experiment the effect of individual hyper parameters
 for eachLR in learning_rate_list:
     batch_size = 32
     img_width, img_height = 300, 300
