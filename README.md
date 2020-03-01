@@ -48,7 +48,7 @@ There can be various contributors to the pneumonia mortality rate in children li
 ## Data Preparation
 The data preparation process is described in the following chart.
 
-![DataPrepFlowChart](docs/screenshots/dataprepflow.png)
+![DataPrepFlowChart](docs/screenshots/dataprepflow.PNG)
 
 ### Dataset Source
 The [original data](https://data.mendeley.com/datasets/rscbjbr9sj/) is collected from Mendeley, Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images.
