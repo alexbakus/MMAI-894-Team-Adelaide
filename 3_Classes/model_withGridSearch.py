@@ -110,7 +110,7 @@ for dense_layer in dense_layers:
                             # since there might be a chance that the training will fail during searching process,
                             # the following code is to ensure that the sets that already been searched do not run a againe
                             # in the event when need to rerun the code
-                            
+
 
                             if checkName[:-20] in trainedModel_list:
                                 print(checkName, ' model trainded before, skipped')
