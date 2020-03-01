@@ -323,6 +323,7 @@ In future we can use to focus on the part of image it is focusing.
 | Normal   |![normalSample](docs/screenshots/layeractivation/normalSample.png)|![normalActivation](docs/screenshots/layeractivation/normalActivation.png)|
 | Virus    |![virusSample](docs/screenshots/layeractivation/virusSample.png)|![virusActivation](docs/screenshots/layeractivation/virusActivation.png)|
 
+As observed from the comparison table, our team’s CNN model outperformed the other models in terms of overall accuracy. VGG 16 came the closest at 76% and Inception V3 had the worst performance at only 45%. In terms of training time per epoch, our CNN only took 70 seconds per epoch however it took the most overall time for training at 21 minutes. VGG 16 took comparably the same amount of time for training at 19 minutes. The least training time was taken by ResNet 50 V2 at 6 minutes, however the performance was quite low at only 59%. Even though our model takes the longest to train, the difference in accuracy achieved is significant enough for us to conclude that our model is better in comparison to the pre-trained models. 
 
 ## Extension to Production
 Knowing the fact that pneumonia accounts for 15% of deaths in children under 5 years old, being able to detect infected patients through Deep Learning poses a lot of opportunity for the healthcare industry. However, we anticipate three major challenges in implementing the model our team built in a healthcare organization.
