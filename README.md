@@ -271,7 +271,7 @@ Looking at the retrained results, descending sorted by their test accuracy, most
 On the other hand, looking at the bottom 4 models, their test accuracy differs their training accuracy my more than 1% (highlighted in red), this shows that despite the effort in cleaning, balancing the class samples and early stopping strategies, some level of overfitting still occurred and having the test split is always the best practice to evaluating the true model performance. 
 
 
-## The Best Preforming Model
+## Design of The Best Preforming Model
 
 Based on all the experiments the team ran, as specified in the Experiments, the CNN architecture that performed the best, given the computational resources and time, is provided below
 ![bestModelStructure](docs/screenshots/best_model_structure.PNG)
