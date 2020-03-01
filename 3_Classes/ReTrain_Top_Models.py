@@ -65,9 +65,9 @@ for file_ in top_model_allFiles:
     print (file_.split('\\')[-1][:-20])
     TopModel_list.append(file_.split('\\')[-1][:-20])
 
-train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/train'
-validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/val'
-test_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/test'
+train_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/train'
+validation_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/val'
+test_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/test'
 
 trainning_time = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
 modelPreformanceLog = open('model_preformance_log_'+trainning_time+'.log','w')

@@ -35,16 +35,17 @@ if gpus:
 
 from PIL import Image
 sourceSize = 'center_crop_clean_300'
-img_width, img_height = 150, 150
+img_width, img_height = 300, 300
 
 
-train_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/train'
-validation_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/val'
-test_data_dir = '3_Classes/data_3C_from_'+sourceSize+'_to_'+str(300)+'/test'
-nb_train_samples = 10000
-nb_validation_samples = 2700
+train_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/train'
+validation_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/val'
+test_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/test'
+
+nb_train_samples = 15000
+nb_validation_samples = 6000
 epochs = 10
-batch_size = 4
+batch_size = 32
 
 if k.image_data_format() == 'channels_first':
     input_shape = (3, img_width, img_height)
@@ -61,8 +62,8 @@ test_generator = test_datagen.flow_from_directory(
     class_mode='categorical')
 
 
-top_model_dir = 'models\\'
-top_model_allFiles = glob.glob('models\\modelFromJimi_20200223-011857.h5')
+top_model_dir = 'models\\TopModels\\'
+top_model_allFiles = glob.glob(top_model_dir+'*.h5')
 TopModel_preformanceList = []
 print(top_model_allFiles)
 for eachModel in top_model_allFiles:

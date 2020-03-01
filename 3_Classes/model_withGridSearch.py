@@ -82,6 +82,8 @@ for dense_layer in dense_layers:
                 for optimizer in optimizers:
                     for learn_rate in learn_rates:
                         for dropout_rate in dropout_rates:
+                            # to make identifying the hyperparameter sets easier and to preparing to reloading them,
+                            # each model is given a unique name base on their hyperparameter set and a time stamp
                             model_time = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
                             NAME = "{}-conv-{}-nodes-{}-dense-{}-kernelSz-{}-optimizer-{}lr-{}-dropr-{}-T".format(conv_layer,
                                                                                                                       layer_size,
@@ -105,6 +107,11 @@ for dense_layer in dense_layers:
                             print(checkNAME)
                             # print(NAME)
                             checkName = 'NewModel_' + checkNAME + '.h5'
+                            # since there might be a chance that the training will fail during searching process,
+                            # the following code is to ensure that the sets that already been searched do not run a againe
+                            # in the event when need to rerun the code
+                            
+
                             if checkName[:-20] in trainedModel_list:
                                 print(checkName, ' model trainded before, skipped')
                             else:

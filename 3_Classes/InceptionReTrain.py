@@ -57,9 +57,9 @@ for file_ in allFiles:
     print (file_.split('\\')[-1][:-20])
     trainedModel_list.append(file_.split('\\')[-1][:-20])
 
-train_data_dir = '3_Classes/data_3C_from_' + sourceSize + '_to_' + str(300) + '/train'
-validation_data_dir = '3_Classes/data_3C_from_' + sourceSize + '_to_' + str(300) + '/val'
-test_data_dir = '3_Classes/data_3C_from_' + sourceSize + '_to_' + str(300) + '/test'
+train_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/train'
+validation_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/val'
+test_data_dir = '3_Classes/data_3C_from_center_crop_clean_300_to_300/test'
 nb_train_samples = 10000
 nb_validation_samples = 2700
 epochs = 30

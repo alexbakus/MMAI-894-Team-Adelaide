@@ -6,8 +6,7 @@ from operator import itemgetter
 path_normal = 'RawData\\NORMAL'
 path_pneumnia = 'RawData\\PNEUMONIA'
 
-# the code trys to corp/export center of the original img so that lung is the focus, but if the picture is too large
-# the code will first shrink it down to 1024x1024 with anti-alising filter then corp to limit x limit
+# the code trys to corp/export center of the original img so that lung is the focus
 
 limit = 300
 zoom_factor = 0.95
@@ -28,7 +27,7 @@ virus_export = root_export+'\\virus\\'
 if not os.path.exists(virus_export):
     os.makedirs(virus_export)
 
-
+# this function crops the given image's center base on the width and height parameters
 def crop_center(pil_img, crop_width, crop_height):
     img_width, img_height = pil_img.size
     return pil_img.crop(((img_width - crop_width) // 2,
@@ -36,7 +35,7 @@ def crop_center(pil_img, crop_width, crop_height):
                          (img_width + crop_width) // 2,
                          (img_height + crop_height) // 2))
 
-
+# this function identifies the max size square dimentions, it also zooms that dimention by 0.95 that can be cropped from given image
 def crop_max_square(pil_img,zoom):
     return crop_center(pil_img, int((min(pil_img.size))*zoom), int((min(pil_img.size))*zoom))
 
@@ -49,6 +48,7 @@ for eachImg in normalImgList:
     width, height = im.size
     if(width >= limit and height >= limit):
         im_center_crop = crop_max_square(im,zoom_factor)
+        # after the cropping, the following line resize the final image into limit x limit size and save to directory
         im_center_crop = im_center_crop.resize((limit, limit), Image.ANTIALIAS)
         im_center_crop.save(normal_export+eachImg.split('\\')[2])
         normalExport_count += 1
@@ -63,6 +63,7 @@ for eachImg in virusImgList:
     width, height = im.size
     if(width >= limit and height >= limit):
         im_center_crop = crop_max_square(im,zoom_factor)
+        # after the cropping, the following line resize the final image into limit x limit size and save to directory
         im_center_crop = im_center_crop.resize((limit, limit), Image.ANTIALIAS)
         im_center_crop.save(virus_export+eachImg.split('\\')[2])
         #imgSizeList.append((width, height))
@@ -76,6 +77,7 @@ for eachImg in bacteriaImgList:
     width, height = im.size
     if(width >= limit and height >= limit):
         im_center_crop = crop_max_square(im,zoom_factor)
+        # after the cropping, the following line resize the final image into limit x limit size and save to directory
         im_center_crop = im_center_crop.resize((limit, limit), Image.ANTIALIAS)
         im_center_crop.save(bacteria_export+eachImg.split('\\')[2])
         bacteriaExport_count += 1
