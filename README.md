@@ -1,5 +1,41 @@
 # MMAI-894-Team-Adelaide
 Deep Learning Team Project
+- [MMAI-894-Team-Adelaide](#mmai-894-team-adelaide)
+  * [Introduction](#introduction)
+    + [Objectives and Approach](#objectives-and-approach)
+  * [Data Preparation](#data-preparation)
+    + [Dataset Source](#dataset-source)
+    + [Creating  Classes Base on File Names](#creating--classes-base-on-file-names)
+    + [Data Cleanning](#data-cleanning)
+    + [Train Test Split](#train-test-split)
+  * [Experimentation](#experimentation)
+    + [‘Grid Searching’ Best Models](#-grid-searching--best-models)
+  * [Model Trainning](#model-trainning)
+    + [Hardware Acceleration](#hardware-acceleration)
+    + [Dynamically Create Model](#dynamically-create-model)
+    + [ImageGenerators](#imagegenerators)
+      - [.flow_from_directory](#flow-from-directory)
+    + [Training Progress Monitoring and Model Saving](#training-progress-monitoring-and-model-saving)
+      - [Tensorbaord Callback](#tensorbaord-callback)
+      - [EarlyStop Callback](#earlystop-callback)
+      - [CheckPoint Callback](#checkpoint-callback)
+    + [.fit_generator](#fit-generator)
+    + [Identify the Top Model](#identify-the-top-model)
+  * [The Best Preforming Model](#the-best-preforming-model)
+    + [Model Classification Report](#model-classification-report)
+    + [Effect of Using Larger Input Size/Resolution](#effect-of-using-larger-input-size-resolution)
+    + [Effect of Using Different Batch Size](#effect-of-using-different-batch-size)
+    + [Effect of Learning Rate](#effect-of-learning-rate)
+    + [Compare with Transfer Learning](#compare-with-transfer-learning)
+    + [Visualizing Layers](#visualizing-layers)
+  * [Extension to Production](#extension-to-production)
+    + [Generalization to new population](#generalization-to-new-population)
+    + [Data availability](#data-availability)
+    + [Explainability](#explainability)
+    + [Scalability](#scalability)
+  * [Future Scope](#future-scope)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Introduction
 According to the World Health Organization, pneumonia is the single most significant infectious cause of death in children worldwide. This disease is responsible for 15% of all deaths of children under the age of five, killing over 800,000 in 2017 or around 2,200 every day, mostly in South Asia and West and Central Africa. Children whose immune system may be weakened by malnutrition or undernourishment, especially in infants who are not exclusively breastfed. There are 1,400 cases of pneumonia per 100,000 children, or 1 per 71 children. 
