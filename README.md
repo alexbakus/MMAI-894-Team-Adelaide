@@ -51,6 +51,7 @@ Common to many proper Machine Learning process, the pre-processed images are spl
 
 ### ImageGenerator
 To have more training images, we implemented image augmentation with the ImageDatagenerator from tensorflow.keras.preprocessing.image with the following parameters:
+
 ![ImageGenerator](docs/screenshots/imagegeneratorParameters.PNG)
 
 ### ‘Grid Searching’ Best Models
@@ -59,4 +60,9 @@ As training a CNN can be computationally expensive, and grid search method of hy
 ![searchingParameters](docs/screenshots/searchingParameters.PNG)
 
 
+### Dynamically Create Model
+With all the tunable parameters, a total of 648 possible combinations of the CNN setup can be created and evaluated.
+Each model was generated dynamically base on the current hyperparameter combination.
+
+![dynamiceModels](docs/screenshots/dynamicModel.PNG)
 
