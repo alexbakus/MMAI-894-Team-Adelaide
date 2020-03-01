@@ -47,6 +47,7 @@ There can be various contributors to the pneumonia mortality rate in children li
 
 ## Data Preparation
 The data preparation process is described in the following chart.
+
 ![dataprepflow](docs/screenshots/dataprepflow.png)
 
 ### Dataset Source
