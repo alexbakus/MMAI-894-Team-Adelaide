@@ -48,3 +48,15 @@ Once these preprocessing steps were completed, we proceeded with various experim
 
 ### Train Test Split
 Common to many proper Machine Learning process, the pre-processed images are splinted at ratio of 70% for training, 20% for validation, and 10% for test evaluation. This process is done by the script [Creat3Splits.py](Creat3Splits.py)
+
+### ImageGenerator
+To have more training images, we implemented image augmentation with the ImageDatagenerator from tensorflow.keras.preprocessing.image with the following parameters:
+![ImageGenerator](docs/screenshots/imagegeneratorParameters.PNG)
+
+### ‘Grid Searching’ Best Models
+As training a CNN can be computationally expensive, and grid search method of hyper parameter tuning is also very computationally expensive, with limited time in mind, the team have chosen the following commonly tuned hyper parameters:
+
+![searchingParameters](docs/screenshots/searchingParameters.PNG)
+
+
+
