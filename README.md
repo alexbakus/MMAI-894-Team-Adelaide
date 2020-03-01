@@ -181,7 +181,7 @@ model.compile(loss='categorical_crossentropy',
 <td>Compile Model</td></tr>
 </table>
 
-### ImageGenerator
+### ImageGenerators
 To have more training images, we implemented image augmentation with the ImageDatagenerator from tensorflow.keras.preprocessing.image with the following parameters:
 
 Parameters | Values
@@ -194,4 +194,48 @@ Width Shift Range | 0.2
 Height Shift Range | 0.2
 Horizontal Flip | True
 
+#### .flow_from_directory
+All of the training and validation images are augmented and generated on-demand with the method of ‘.flow_from_directory’ 
+  ```python
+train_generator = train_datagen.flow_from_directory(
+    train_data_dir,
+    target_size=(img_width, img_height),
+    batch_size=batch_size, class_mode='categorical')
+``` 
+
+  ```python
+validation_generator = val_datagen.flow_from_directory(
+    validation_data_dir,
+    target_size=(img_width, img_height),
+    batch_size=batch_size, class_mode='categorical')
+``` 
+
+### Training Progress Monitoring and Model Saving 
+As the searching and training sequence is expected to run for about a week, it is important for the team to be able to view the current progress and visualizes past model performance through a monitoring platform. 
+
+#### Tensorbaord Callback
+TensorBoard is the tool to monitor the progress of each model’s training and validation performance. 
+  ```python
+tensorboard_callback = tf.keras.callbacks.TensorBoard(log_dir=log_dir, histogram_freq=1)
+``` 
+#### EarlyStop Callback
+To minimizing the chance of over Fitting, EarlyStopping method is implemented and continuing monitor the ‘val_loss’ with ‘patience’ set at 2 epochs.
+  ```python
+es_callback = tf.keras.callbacks.EarlyStopping(monitor='val_loss', verbose=1,patience=2)
+``` 
+#### CheckPoint Callback
+To save the model with its best epoch weight, ModelCheckpoint method is implemented and each model is given a name that describes the hyperparameters set tagged by the current datetime to ensure uniqueness.
+  ```python
+checkpoint_callback =  tf.keras.callbacks.ModelCheckpoint(filepath=(model_export + mdoel_name+ model_time + '.h5'), monitor='val_accuracy',  save_best_only=True)
+``` 
+### .fit_generator
+With the use of training and validation image generation method, ‘. fit_generator’ method is used as the method of fit for each model.
+  ```python
+model.fit_generator(train_generator,
+                    steps_per_epoch=nb_train_samples // batch_size,
+                    epochs=epochs,
+                    validation_data=validation_generator,
+                    validation_steps=nb_validation_samples // batch_size,
+                    callbacks=[tensorboard_callback, es_callback, checkpoint_callback])
+``` 
 
