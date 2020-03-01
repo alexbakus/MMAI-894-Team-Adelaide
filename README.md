@@ -1,6 +1,23 @@
 # MMAI-894-Team-Adelaide
 Deep Learning Team Project
 
+- [MMAI-894-Team-Adelaide](#mmai-894-team-adelaide)
+  * [Data Preparation](#data-preparation)
+    + [Dataset Source](#dataset-source)
+    + [Creating  Classes Base on File Names](#creating--classes-base-on-file-names)
+    + [Data Cleanning](#data-cleanning)
+    + [Final Data For ML Input](#final-data-for-ml-input)
+    + [Train Test Split](#train-test-split)
+  * [Experimnentation](#experimnentation)
+    + [‘Grid Searching’ Best Models](#-grid-searching--best-models)
+  * [Model Trainning](#model-trainning)
+    + [Hardware Acceleration](#hardware-acceleration)
+    + [Dynamically Create Model](#dynamically-create-model)
+    + [ImageGenerator](#imagegenerator)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+
 ## Data Preparation
 ### Dataset Source
 The [original data](https://data.mendeley.com/datasets/rscbjbr9sj/) is collected from Mendeley, Large Dataset of Labeled Optical Coherence Tomography (OCT) and Chest X-Ray Images.
@@ -176,3 +193,5 @@ Zoom Range | 0.2
 Width Shift Range | 0.2
 Height Shift Range | 0.2
 Horizontal Flip | True
+
+
