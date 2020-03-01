@@ -37,8 +37,9 @@ center_crop_300
     │   ...
 ```
 ### Data Cleanning
-We noticed that a significant x-ray images consist man-made objects, such as medical equipments. To avoid potential data leakage, we mannually deleted. 
+We noticed that a significant x-ray images consist man-made objects, such as medical equipments. To avoid potential data leakage, we mannually deleted. The remained data is saved in the directory named [center_crop_clean_300](center_crop_clean_300/)
 ![maxCropEffect](docs/screenshots/maxCrop.PNG)
 
-
+### Final Data For ML Input
+![fileDistribution](docs/screenshots/filedistribution.PNG)
 
