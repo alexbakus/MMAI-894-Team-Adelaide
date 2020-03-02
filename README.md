@@ -1,5 +1,6 @@
-# MMAI-894-Team-Adelaide
-- [Deep Learning Team Project: Detecting Pneumonia from Chest X-Rays by Image-Based Deep Learning](#deep-learning-team-project--detecting-pneumonia-from-chest-x-rays-by-image-based-deep-learning)
+
+# Deep Learning Team Project: Detecting Pneumonia from Chest X-Rays by Image-Based Deep Learning
+- [MMAI-894-Team-Adelaide](#mmai-894-team-adelaide)
   * [Contributors](#contributors)
   * [Introduction](#introduction)
     + [Objectives and Approach](#objectives-and-approach)
@@ -38,9 +39,9 @@
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-# Deep Learning Team Project: Detecting Pneumonia from Chest X-Rays by Image-Based Deep Learning
+# MMAI-894-Team-Adelaide
 ## Contributors
-We are a group of students from the [Master of Management in Artificial Intelligence (MMAI)](https://smith.queensu.ca/grad_studies/mmai/) program orginazed by the Queen's University Smith School of Business. 
+We are a group of students from the [Master of Management in Artificial Intelligence (MMAI)](https://smith.queensu.ca/grad_studies/mmai/) program orginazed by the [Queen's University Smith School of Business](https://smith.queensu.ca/index.php). 
 
 Our team goal is to nurture, challenge and grow as a team of professionals while acquiring necessary skills, knowledge and real world experience in AI.
 
