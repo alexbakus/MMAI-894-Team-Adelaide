@@ -363,7 +363,7 @@ Furthermore, a good design is to make convolutional neural networks transfer lea
 In the same manner, we are proposing an ensemble of CNN for detecting pneumonia can be designed in the future. By this design, more transparency is introduced and therefore can pinpoint with higher accuracy at what step is the diagnosis currently happening.
 
 An initial design of the ensemble architecture of CNN’s on a high level is shown below:
-![futureModelDesign](docs/screenshots/futureModelDesign.PNG)
+![futureModelDesign](docs/screenshots/futureCNN.PNG)
 
 This was our first attempt on developing a convolutional neural network using real public data. This allowed us to determine what worked best for this specific situation, what flawed, how fast were executions were running, and how RAM (memory) was utilized, etc. Publicly available neural networks could also be utilized using transfer learning, such as VGG Net, ResNetor GoogleLeNet. One of the challenges by using a readily available CNN would be determining how many last layers would be replaced in these networks to adapt them to predict pneumonia or not. On the other hand, an advantage is that those CNN’s have been trained already.
 
